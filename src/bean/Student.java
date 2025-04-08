@@ -1,0 +1,60 @@
+package bean;
+
+public class Student implements java.io.Serializable {
+
+	private int no;
+	private String name;
+	private int intYear;
+	private int classNum;
+	private boolean isAttend;
+	private int schoolCd;
+
+	public int getNo() {
+		return no;
+	}
+
+	public void setNo(int no) {
+		this.no = no;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getIntYear() {
+		return intYear;
+	}
+
+	public void setIntYear(int intYear) {
+		this.intYear = intYear;
+	}
+
+	public int getClassNum() {
+		return classNum;
+	}
+
+	public void setClassNum(int classNum) {
+		this.classNum = classNum;
+	}
+
+	public boolean isAttend() {
+		return isAttend;
+	}
+
+	public void setAttend(boolean isAttend) {
+		this.isAttend = isAttend;
+	}
+
+	public int getSchoolCd() {
+		return schoolCd;
+	}
+
+	public void setSchoolCd(int schoolCd) {
+		this.schoolCd = schoolCd;
+	}
+
+}
