@@ -2,21 +2,21 @@ package bean;
 
 public class Subject implements java.io.Serializable {
 
-	private String shoolCD;
-	private String CD;
+	private int shoolCd;
+	private int cd;
 	private String name;
 
-	public String getShoolCD() {
-		return shoolCD;
+	public int getShoolCd() {
+		return shoolCd;
 	}
-	public void setShoolCD(String shoolCD) {
-		this.shoolCD = shoolCD;
+	public void setShoolCd(int shoolCd) {
+		this.shoolCd = shoolCd;
 	}
-	public String getCD() {
-		return CD;
+	public int getCd() {
+		return cd;
 	}
-	public void setCD(String cD) {
-		CD = cD;
+	public void setCd(int cd) {
+		this.cd = cd;
 	}
 	public String getName() {
 		return name;
@@ -24,4 +24,6 @@ public class Subject implements java.io.Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+
 }
