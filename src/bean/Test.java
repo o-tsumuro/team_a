@@ -2,8 +2,8 @@ package bean;
 
 public class Test implements java.io.Serializable {
 	private String studentNo;
-	private int subjectCd;
-	private int schoolCd;
+	private String subjectCd;
+	private String schoolCd;
 	private int no;
 	private int point;
 	private String classNum;
@@ -15,16 +15,16 @@ public class Test implements java.io.Serializable {
 	public void setStudentNo(String studentNo) {
 		this.studentNo = studentNo;
 	}
-	public int getSubjectCd() {
+	public String getSubjectCd() {
 		return subjectCd;
 	}
-	public void setSubjectCd(int subjectCd) {
+	public void setSubjectCd(String subjectCd) {
 		this.subjectCd = subjectCd;
 	}
-	public int getSchoolCd() {
+	public String getSchoolCd() {
 		return schoolCd;
 	}
-	public void setSchoolCd(int schoolCd) {
+	public void setSchoolCd(String schoolCd) {
 		this.schoolCd = schoolCd;
 	}
 	public int getNo() {
