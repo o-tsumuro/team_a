@@ -25,12 +25,12 @@ public class Student implements java.io.Serializable {
 		this.name = name;
 	}
 
-	public int getIntYear() {
+	public int getEntYear() {
 		return entYear;
 	}
 
-	public void setIntYear(int intYear) {
-		this.entYear = intYear;
+	public void setEntYear(int entYear) {
+		this.entYear = entYear;
 	}
 
 	public int getClassNum() {
