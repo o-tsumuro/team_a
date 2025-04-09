@@ -3,6 +3,6 @@
 
 <h2>ログアウト</h2>
 <p>ログアウトしました</p>
-<a href="login.jsp">ログイン</a>
+<a href="auth/login.jsp">ログイン</a>
 
 <%@include file="../footer.jsp" %>
