@@ -2,14 +2,14 @@ package bean;
 
 public class ClassNum implements java.io.Serializable {
 
-	private int schoolCd;
+	private String schoolCd;
 	private int classNum;
 
-	public int getSchoolCd() {
+	public String getSchoolCd() {
 		return schoolCd;
 	}
 
-	public void setSchoolCd(int schoolCd) {
+	public void setSchoolCd(String schoolCd) {
 		this.schoolCd = schoolCd;
 	}
 
