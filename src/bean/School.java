@@ -2,14 +2,14 @@ package bean;
 
 public class School implements java.io.Serializable {
 
-	private int cd;
+	private String cd;
 	private String name;
 
-	public int getCd() {
+	public String getCd() {
 		return cd;
 	}
 
-	public void setCd(int cd) {
+	public void setCd(String cd) {
 		this.cd = cd;
 	}
 
