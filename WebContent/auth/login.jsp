@@ -2,7 +2,7 @@
 <%@include file="../header.jsp" %>
 
 <h2>ログイン</h2>
-<form action="Login.action" method="post">
+<form action="../Login.action" method="post">
 	<input type="text"
 		   name="id"
 		   maxlength="10"
