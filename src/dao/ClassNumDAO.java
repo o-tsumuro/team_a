@@ -3,6 +3,7 @@ package dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.List;
 
 import bean.ClassNum;
 import bean.School;
@@ -29,6 +30,13 @@ public class ClassNumDAO extends DAO {
 
     	return cn;
 
+	}
+
+	@SuppressWarnings("null")
+	public List<String> filter(School school) {
+		List<String> dummy = null;
+		dummy.add("dummy");
+		return dummy;
 	}
 
 
