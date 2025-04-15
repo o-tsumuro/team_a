@@ -5,6 +5,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import tool.Action;
 
+
+//まだ完成してないです
 public class SubjectCreateAction extends Action {
 
 	@Override

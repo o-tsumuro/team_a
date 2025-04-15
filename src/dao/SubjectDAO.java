@@ -9,6 +9,8 @@ import java.util.List;
 import bean.School;
 import bean.Subject;
 
+
+//一部未完成です
 public class SubjectDAO extends DAO {
 
 	public Subject get(String cd, School school)throws Exception {

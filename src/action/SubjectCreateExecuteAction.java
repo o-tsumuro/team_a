@@ -8,6 +8,7 @@ import bean.Subject;
 import dao.SubjectDAO;
 import tool.Action;
 
+//まだ完成してないです
 public class SubjectCreateExecuteAction extends Action {
 
 	@Override
