@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import bean.School;
 import bean.Teacher;
 import dao.SchoolDAO;
 import dao.TeacherDAO;
@@ -29,8 +30,10 @@ public class LoginAction extends Action{
 		session.setAttribute("teacher", teacher);
 		session.setAttribute("user_school_cd", teacher.getSchoolCd());
 
+		School school;
 		SchoolDAO schoolDao = new SchoolDAO();
-		schoolDao.getSchool(teacher.getSchoolCd());
+		school = schoolDao.getSchool(teacher.getSchoolCd());
+		session.setAttribute("school", school);
 
 		return "/index.jsp";
 	}
