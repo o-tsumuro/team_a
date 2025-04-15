@@ -6,8 +6,9 @@ public class Student implements java.io.Serializable {
 	private String name;
 	private int entYear;
 	private int classNum;
-	private boolean isAttend;
+	private boolean isAttend = true;
 	private String schoolCd;
+
 
 	public int getNo() {
 		return no;
