@@ -9,6 +9,8 @@ import java.util.List;
 import bean.School;
 import bean.Subject;
 
+
+//一部未完成です
 public class SubjectDAO extends DAO {
 
 	public Subject get(String cd, School school)throws Exception {
@@ -27,7 +29,7 @@ public class SubjectDAO extends DAO {
 			sbj = new Subject();
 			sbj.setCd(rs.getString("cd"));
 			sbj.setName(rs.getString("name"));
-			sbj.setShoolCd(rs.getString("school_cd"));
+			sbj.setSchoolCd(rs.getString("school_cd"));
 		}
 
 		st.close();
@@ -52,7 +54,7 @@ public class SubjectDAO extends DAO {
 			Subject sbj = new Subject();
 			sbj.setCd(rs.getString("cd"));
 			sbj.setName(rs.getString("name"));
-			sbj.setShoolCd(rs.getString("school_cd"));
+			sbj.setSchoolCd(rs.getString("school_cd"));
 			list.add(sbj);
 
 		}
@@ -68,7 +70,7 @@ public class SubjectDAO extends DAO {
 		PreparedStatement st;
 		st = con.prepareStatement(
 				"INSERT INTO SUBJECT VALUES(?, ?, ?)");
-		st.setString(1, sbj.getShoolCd());
+		st.setString(1, sbj.getSchoolCd());
 		st.setString(2, sbj.getCd());
 		st.setString(3, sbj.getName());
 

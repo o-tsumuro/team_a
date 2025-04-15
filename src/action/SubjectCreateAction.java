@@ -5,12 +5,14 @@ import javax.servlet.http.HttpServletResponse;
 
 import tool.Action;
 
+
+//まだ完成してないです
 public class SubjectCreateAction extends Action {
 
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
+
+		return "/subject/subjectCreate.jsp";
 	}
 
 }
