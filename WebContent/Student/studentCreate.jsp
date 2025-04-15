@@ -1,12 +1,15 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
-
+<%@include file="../header.jsp" %>
 
 <h2>学生情報登録</h2>
 
 <p><label for="year-select">入学年度</label><p>
-<form action="" method="post">
-<select name="ent_year" id="year-select">
+<form action="../StudentCreate.action" method="post">
+
+
+
+<select name="ent_year" id="year-select" required>
   <option value="">------</option>
   <%
     int baseYear = 2025; // 基準となる年を設定
@@ -25,10 +28,13 @@
     <input type="text" name="name" id="student-name" maxlength="30" placeholder="氏名を入力して下さい" required>
 
 <p><label for="student-class">クラス</label></p>
-    <p><select name="class_num" id="student-class">
+    <p><select name="class_num" id="student-class" required>
             <option value="">------</option>
+            <option value="101">101</option>
+            <option value="202">202</option>
     </select></p>
 
 <p><input value="登録して終了"type="submit" name="end"></p>
 </form>
 <a href="student-list.jsp">戻る</a>
+<%@include file="../footer.jsp" %>
