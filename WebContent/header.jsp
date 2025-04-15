@@ -12,7 +12,7 @@
 <div class="header-wrapper">
     <h1>得点管理システム</h1>
         <c:if test="${not empty teacher}">
-        <span>${teacher.name}</span>
-        <a href="Logout.action">ログアウト</a>
-    </c:if>
+        	<span>${teacher.name}</span>
+        	<a href="Logout.action">ログアウト</a>
+    	</c:if>
 </div>
