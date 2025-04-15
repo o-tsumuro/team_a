@@ -1,0 +1,22 @@
+<%@page contentType="text/html; charset=UTF-8" %>
+<%@include file="../header.jsp" %>
+<%@include file="../menu.jsp" %>
+
+<h2>科目管理</h2>
+
+<a href="#">新規登録</a>
+
+<table><thead><th>科目コード</th><th>科目名</th></thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<a href="#">変更</a>
+<a href="#">削除</a>
+</tr>
+</tbody>
+</table>
+
+<a href="#">科目管理</a>
+
+<%@include file="../footer.jsp" %>
