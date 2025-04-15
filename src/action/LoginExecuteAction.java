@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import bean.School;
 import bean.Teacher;
+import bean.User;
 import dao.SchoolDAO;
 import dao.TeacherDAO;
 import tool.Action;
@@ -27,8 +28,11 @@ public class LoginExecuteAction extends Action{
 			return "#";
 		}
 
+		User user = new User();
+		user.setAuthenticated(true);
+
 		session.setAttribute("teacher", teacher);
-		session.setAttribute("user_school_cd", teacher.getSchoolCd());
+		session.setAttribute("user", user);
 
 		School school;
 		SchoolDAO schoolDao = new SchoolDAO();

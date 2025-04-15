@@ -13,7 +13,7 @@
 <select name="ent_year" id="year-select" required>
   <option value="">------</option>
   <%
-    int baseYear = 2025; // 基準となる年を設定
+    int baseYear = 2025;
     for (int year = baseYear - 10; year <= baseYear + 10; year++) {
   %>
       <option value="<%= year %>"><%= year %></option>
