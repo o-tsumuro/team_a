@@ -17,7 +17,6 @@ public class LogoutAction extends Action {
 			return "/auth/logout.jsp";
 		}
 
-		// ログアウトエラー時のリンク先(未実装)
 		return "#";
 	}
 
