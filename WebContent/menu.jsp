@@ -1,6 +1,6 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="includes/header.jsp" %>
-<%@include file="includes/sidebar.jsp" %>
+<%@include file="/includes/header.jsp" %>
+<%@include file="/includes/sidebar.jsp" %>
 
 <h2>メニュー</h2>
 
@@ -14,4 +14,4 @@
 
 <a href="#">科目管理</a>
 
-<%@include file="includes/footer.jsp" %>
+<%@include file="/includes/footer.jsp" %>
