@@ -2,6 +2,7 @@ package action;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import bean.Student;
 import dao.StudentDAO;
@@ -14,12 +15,18 @@ public class StudentCreateAction extends Action {
             String name = request.getParameter("name");
             int year = Integer.parseInt(request.getParameter("ent_year"));
             int classNum = Integer.parseInt(request.getParameter("class_num"));
+            String schoolCd;
+            HttpSession session = request.getSession(false);
+            schoolCd = (String) session.getAttribute("user_school_cd");
+
 
             Student student = new Student();
             student.setNo(no);
             student.setName(name);
             student.setEntYear(year);
             student.setClassNum(classNum);
+            student.setSchoolCd(schoolCd);
+
 
             StudentDAO dao = new StudentDAO();
             boolean result = dao.save(student);
