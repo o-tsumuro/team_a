@@ -1,10 +1,10 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../header.jsp" %>
-<%@include file="../menu.jsp" %>
+<%@include file="../includes/header.jsp" %>
+<%@include file="../includes/sidebar.jsp" %>
 
 <h2>科目情報登録</h2>
 
-<from action="../SubjectCreate.action" method="post">
+<form action="../SubjectCreate.action" method="post">
 <label>
 <p>科目コード</p>
 <input type="text"
@@ -23,6 +23,7 @@
 		value="${cd}">
 </label>
 <input type="submit" value="登録">
+</form>
 <a href="#">戻る</a>
 
-<%@include file="../footer.jsp" %>
+<%@include file="../includes/footer.jsp" %>

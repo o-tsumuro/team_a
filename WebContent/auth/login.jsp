@@ -1,5 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../header.jsp" %>
+<%@include file="../includes/header.jsp" %>
 
 <h2>ログイン</h2>
 <form action="../LoginExecute.action" method="post">
@@ -23,4 +23,4 @@
 	<input type="submit" name="login" value="ログイン">
 </form>
 
-<%@include file="../footer.jsp" %>
+<%@include file="../includes/footer.jsp" %>
