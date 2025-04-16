@@ -4,10 +4,10 @@
 <%@include file="/includes/header.jsp" %>
 
 <h2>学生情報登録</h2>
-<% String error = (String)request.getAttribute("error"); %>
-<% if (error != null) { %>
-    <p style="color:red;"><%= error %></p>
-<% } %>
+
+
+<p><label for="year-select">入学年度</label><p>
+
 <form action="/team_a/main/StudentCreate.action" method="post">
 
 
