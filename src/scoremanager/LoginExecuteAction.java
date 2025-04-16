@@ -1,4 +1,4 @@
-package action;
+package scoremanager;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,12 +20,15 @@ public class LoginExecuteAction extends Action{
 		String id = req.getParameter("id");
 		String password=req.getParameter("password");
 
+		req.setAttribute("id", id);
+
 		TeacherDAO teacherDao = new TeacherDAO();
 		Teacher teacher = teacherDao.login(id, password);
 
 		if (teacher == null) {
 			System.out.println("ログイン失敗");
-			return "#";
+			session.setAttribute("error", "IDまたはパスワードが確認できませんでした");
+			resp.sendRedirect("/team_a/Login.action");
 		}
 
 		User user = new User();
