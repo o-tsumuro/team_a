@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import bean.User;
 import tool.Action;
 
 public class LogoutAction extends Action {
@@ -14,6 +15,8 @@ public class LogoutAction extends Action {
 
 		if (session.getAttribute("teacher") != null) {
 			session.removeAttribute("teacher");
+			User user = (User) session.getAttribute("user");
+			user.setAuthenticated(false);
 			return "/auth/logout.jsp";
 		}
 
