@@ -4,7 +4,7 @@
 
 <h2>科目管理</h2>
 
-<a href="#">新規登録</a>
+<a href="./SubjectCreate.action">新規登録</a>
 
 <table><thead><th>科目コード</th><th>科目名</th></thead>
 <tbody>
@@ -12,13 +12,14 @@
 		<tr>
 			<td>${sbj.cd}</td>
 			<td>${sbj.name}</td>
+			<td>
 			<a href="#">変更</a>
 			<a href="#">削除</a>
+			</td>
 		</tr>
 	</c:forEach>
 </tbody>
 </table>
 
-<a href="#">科目管理</a>
 
 <%@include file="/includes/footer.jsp" %>

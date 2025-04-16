@@ -4,7 +4,7 @@
 
 <h2>科目情報登録</h2>
 
-<form action="../SubjectCreate.action" method="post">
+<form action="../main/SubjectCreateExecute.action" method="post">
 <label>
 <p>科目コード</p>
 <input type="text"
@@ -20,10 +20,16 @@
 		name="name"
 		maxlength="20"
 		placeholder="科目名を入力してください。"
-		value="${cd}">
+		value="${name}">
 </label>
+
+<c:if test="${not empty message}">
+    <li>${message}</li>
+</c:if>
+
+
 <input type="submit" value="登録">
 </form>
-<a href="#">戻る</a>
+<a href="/team_a/main/SubjectList.action">戻る</a>
 
 <%@include file="/includes/footer.jsp" %>
