@@ -2,6 +2,12 @@
 <%@include file="/includes/header.jsp" %>
 
 <h2>ログイン</h2>
+
+<c:if test="${not empty error}">
+    <li>${error}</li>
+</c:if>
+
+
 <form action="/team_a/LoginExecute.action" method="post">
 	<input type="text"
 		   name="id"

@@ -27,7 +27,7 @@ public class LoginExecuteAction extends Action{
 
 		if (teacher == null) {
 			System.out.println("ログイン失敗");
-			session.setAttribute("error", "IDまたはパスワードが確認できませんでした");
+			session.setAttribute("error", "ログインに失敗しました。IDまたはパスワードが正しくありません。");
 			resp.sendRedirect("/team_a/Login.action");
 		}
 
