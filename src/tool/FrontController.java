@@ -34,18 +34,18 @@ public class FrontController extends HttpServlet {
         try {
             // ① リクエストされたURLのパスを取得
 
-            System.out.println(request.getServletPath());
+//            System.out.println(request.getServletPath());
 
             String path = request.getServletPath().substring(1);
             // 例: "/chapter23/Search.action" → "chapter23/Search.action"
 
-            System.out.println(path);
+//            System.out.println(path);
 
             // ② パスをパッケージ名(action).アクションクラス名の形式に変換
             String name = "scoremanager." + path.replace(".a", "A").replace('/', '.');
             // 例: "chapter23/Search.action" → "chapter23.SearchAction"
 
-            System.out.println(path);
+//            System.out.println(path);
 
             System.out.println("アクションクラス名 : " + name);
             // ③ アクションクラスのインスタンスを動的に生成
@@ -57,7 +57,7 @@ public class FrontController extends HttpServlet {
             String url = action.execute(request, response);
             // 例: "/searchResult.jsp" など
 
-            System.out.println(url);
+//            System.out.println(url);
 
             // ⑤ 指定されたURLへフォワード
             request.getRequestDispatcher(url).forward(request, response);
