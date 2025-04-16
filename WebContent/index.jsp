@@ -1,3 +1,3 @@
 <%
-	response.sendRedirect("Menu.action");
+	response.sendRedirect("main/Menu.action");
 %>
