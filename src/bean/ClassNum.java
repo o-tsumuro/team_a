@@ -3,7 +3,7 @@ package bean;
 public class ClassNum implements java.io.Serializable {
 
 	private String schoolCd;
-	private int classNum;
+	private String classNum;
 
 	public String getSchoolCd() {
 		return schoolCd;
@@ -13,11 +13,11 @@ public class ClassNum implements java.io.Serializable {
 		this.schoolCd = schoolCd;
 	}
 
-	public int getClassNum() {
+	public String getClassNum() {
 		return classNum;
 	}
 
-	public void setClassNum(int classNum) {
+	public void setClassNum(String classNum) {
 		this.classNum = classNum;
 	}
 
