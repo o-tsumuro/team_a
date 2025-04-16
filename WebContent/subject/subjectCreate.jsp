@@ -1,6 +1,6 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../includes/header.jsp" %>
-<%@include file="../includes/sidebar.jsp" %>
+<%@include file="/includes/header.jsp" %>
+<%@include file="/includes/sidebar.jsp" %>
 
 <h2>科目情報登録</h2>
 
@@ -26,4 +26,4 @@
 </form>
 <a href="#">戻る</a>
 
-<%@include file="../includes/footer.jsp" %>
+<%@include file="/includes/footer.jsp" %>

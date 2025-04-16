@@ -106,7 +106,7 @@ public class StudentDAO extends DAO {
 
         st.setString(1, schoolCd);
         st.setInt(2, entYear);
-        st.setBoolean(4, isAttend);
+        st.setBoolean(3 ,isAttend);
 
         ResultSet rs = st.executeQuery();
 
@@ -135,7 +135,7 @@ public class StudentDAO extends DAO {
             );
 
             st.setString(1, schoolCd);
-            st.setBoolean(4, isAttend);
+            st.setBoolean(2, isAttend);
 
             ResultSet rs = st.executeQuery();
 

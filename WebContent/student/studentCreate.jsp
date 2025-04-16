@@ -1,7 +1,7 @@
 <%@page import="bean.Teacher"%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
-<%@include file="../includes/header.jsp" %>
+<%@include file="/includes/header.jsp" %>
 
 <h2>学生情報登録</h2>
 
@@ -38,4 +38,4 @@
 <p><input value="登録して終了"type="submit" name="end"></p>
 </form>
 <a href="student-list.jsp">戻る</a>
-<%@include file="../includes/footer.jsp" %>
+<%@include file="/includes/footer.jsp" %>
