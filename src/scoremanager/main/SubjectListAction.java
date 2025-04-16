@@ -23,12 +23,11 @@ public class SubjectListAction extends Action {
 		School school = (School) session.getAttribute("school");
 
 		SubjectDAO dao = new SubjectDAO();
-
 		List<Subject> sbjList = dao.filter(school);
+
 		session.setAttribute("subjectList", sbjList);
 
 
-		return "/subject/subjectList.jsp";
+		return "../subject/subjectList.jsp";
 	}
-
 }

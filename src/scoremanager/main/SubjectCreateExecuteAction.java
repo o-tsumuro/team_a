@@ -19,7 +19,6 @@ public class SubjectCreateExecuteAction extends Action {
 
 		String cd = req.getParameter("cd");
 		String name = req.getParameter("name");
-		String schoolCd = (String) session.getAttribute("user_school_cd");
 		School school = (School) session.getAttribute("school");
 
 		if (cd.length() != 3){
@@ -30,11 +29,11 @@ public class SubjectCreateExecuteAction extends Action {
 		Subject sbj = new Subject();
 		sbj.setCd(cd);
 		sbj.setName(name);
-		sbj.setSchoolCd(schoolCd);
+		sbj.setSchoolCd(school.getCd());
 
 		SubjectDAO dao = new SubjectDAO();
 
-		if (dao.get(schoolCd, school) != null){
+		if (dao.get(cd, school) != null){
 			session.setAttribute("message","科目コードが重複しています。");
 			return "/subject/subjectCreate.jsp";
 		}

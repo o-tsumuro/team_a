@@ -12,7 +12,6 @@ import bean.Student;
 public class StudentDAO extends DAO {
 
 
-
     public boolean save(Student student) throws Exception {
 
 
@@ -80,17 +79,7 @@ public class StudentDAO extends DAO {
 
         ResultSet rs = st.executeQuery();
 
-        List<Student> list = new ArrayList<>();
-        while (rs.next()) {
-            Student student = new Student();
-            student.setNo(rs.getInt("no"));
-            student.setName(rs.getString("name"));
-            student.setEntYear(rs.getInt("ent_year"));
-            student.setClassNum(rs.getInt("class_num"));
-            student.setAttend(rs.getBoolean("is_attend"));
-            student.setSchoolCd(rs.getString("school_cd"));
-            list.add(student);
-        }
+        List<Student> list = postFilter(rs);
 
         rs.close();
         st.close();
@@ -110,17 +99,7 @@ public class StudentDAO extends DAO {
 
         ResultSet rs = st.executeQuery();
 
-        List<Student> list = new ArrayList<>();
-        while (rs.next()) {
-            Student student = new Student();
-            student.setNo(rs.getInt("no"));
-            student.setName(rs.getString("name"));
-            student.setEntYear(rs.getInt("ent_year"));
-            student.setClassNum(rs.getInt("class_num"));
-            student.setAttend(rs.getBoolean("is_attend"));
-            student.setSchoolCd(rs.getString("school_cd"));
-            list.add(student);
-        }
+        List<Student> list = postFilter(rs);
 
         rs.close();
         st.close();
@@ -139,21 +118,25 @@ public class StudentDAO extends DAO {
 
             ResultSet rs = st.executeQuery();
 
-            List<Student> list = new ArrayList<>();
-            while (rs.next()) {
-                Student student = new Student();
-                student.setNo(rs.getInt("no"));
-                student.setName(rs.getString("name"));
-                student.setEntYear(rs.getInt("ent_year"));
-                student.setClassNum(rs.getInt("class_num"));
-                student.setAttend(rs.getBoolean("is_attend"));
-                student.setSchoolCd(rs.getString("school_cd"));
-                list.add(student);
-            }
+            List<Student> list = postFilter(rs);
 
             rs.close();
             st.close();
 
             return list;
+    }
+    public List<Student> postFilter (ResultSet rs) throws Exception {
+         List<Student> list = new ArrayList<>();
+         while (rs.next()) {
+             Student student = new Student();
+             student.setNo(rs.getInt("no"));
+             student.setName(rs.getString("name"));
+             student.setEntYear(rs.getInt("ent_year"));
+             student.setClassNum(rs.getInt("class_num"));
+             student.setAttend(rs.getBoolean("is_attend"));
+             student.setSchoolCd(rs.getString("school_cd"));
+             list.add(student);
+         }
+         return list;
     }
 }
