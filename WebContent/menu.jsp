@@ -12,6 +12,6 @@
 	<a href="#">成績参照</a>
 </div>
 
-<a href="#">科目管理</a>
+<a href="/team_a/SubjectList.action">科目管理</a>
 
 <%@include file="/includes/footer.jsp" %>
