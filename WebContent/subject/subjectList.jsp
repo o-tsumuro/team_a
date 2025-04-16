@@ -8,12 +8,14 @@
 
 <table><thead><th>科目コード</th><th>科目名</th></thead>
 <tbody>
-<tr>
-<td></td>
-<td></td>
-<a href="#">変更</a>
-<a href="#">削除</a>
-</tr>
+	<c:forEach var="sbj" items="${subjectList}">
+		<tr>
+			<td>${sbj.cd}</td>
+			<td>${sbj.name}</td>
+			<a href="#">変更</a>
+			<a href="#">削除</a>
+		</tr>
+	</c:forEach>
 </tbody>
 </table>
 
