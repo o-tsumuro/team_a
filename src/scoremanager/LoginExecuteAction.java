@@ -20,7 +20,7 @@ public class LoginExecuteAction extends Action{
 		String id = req.getParameter("id");
 		String password=req.getParameter("password");
 
-		req.setAttribute("id", id);
+		session.setAttribute("id", id);
 
 		TeacherDAO teacherDao = new TeacherDAO();
 		Teacher teacher = teacherDao.login(id, password);

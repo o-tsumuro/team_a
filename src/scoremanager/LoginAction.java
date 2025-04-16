@@ -11,6 +11,11 @@ public class LoginAction extends Action{
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
 		HttpSession session = req.getSession();
+
+		String id = (String) session.getAttribute("id");
+		req.setAttribute("id", id);
+		session.removeAttribute("id");
+
 		String error = (String) session.getAttribute("error");
 
 		if (error != null) {
