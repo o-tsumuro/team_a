@@ -4,12 +4,14 @@
 <%@include file="/includes/header.jsp" %>
 
 <h2>学生情報登録</h2>
+<% String error = (String)request.getAttribute("error"); %>
+<% if (error != null) { %>
+    <p style="color:red;"><%= error %></p>
+<% } %>
+<form action="/team_a/main/StudentCreate.action" method="post">
 
-<p><label for="year-select">入学年度</label><p>
-<form action="../StudentCreate.action" method="post">
 
-
-<select name="ent_year" id="year-select" required>
+<select name="ent_year" id="year-select" >
 <option value="">------</option>
 <%
     int baseYear = 2025;
