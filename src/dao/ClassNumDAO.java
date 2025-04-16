@@ -3,6 +3,7 @@ package dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
 
 import bean.ClassNum;
@@ -21,22 +22,32 @@ public class ClassNumDAO extends DAO {
 		ResultSet rs = st.executeQuery();
 
 		ClassNum cn = new ClassNum();
-		cn.setClassNum(Integer.parseInt(rs.getString("class_num")));
+		cn.setClassNum(rs.getString("class_num"));
 		cn.setSchoolCd(rs.getString("school_cd"));
-
 
     	st.close();
     	con.close();
 
     	return cn;
-
 	}
 
-	@SuppressWarnings("null")
-	public List<String> filter(School school) {
-		List<String> dummy = null;
-		dummy.add("dummy");
-		return dummy;
+	public List<String> filter(School school) throws Exception {
+	    List<String> classNumList = new ArrayList<>();
+
+	    try (Connection con = getConnection();
+	         PreparedStatement st = con.prepareStatement(
+	             "SELECT CLASS_NUM FROM CLASS_NUM WHERE SCHOOL_CD = ?")) {
+
+	        st.setString(1, school.getCd());
+
+	        try (ResultSet rs = st.executeQuery()) {
+	            while (rs.next()) {
+	                classNumList.add(rs.getString("class_num"));
+	            }
+	        }
+	    }
+
+	    return classNumList;
 	}
 
 
