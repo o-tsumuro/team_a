@@ -12,7 +12,6 @@ import bean.Student;
 public class StudentDAO extends DAO {
 
 
-
     public boolean save(Student student) throws Exception {
 
 
