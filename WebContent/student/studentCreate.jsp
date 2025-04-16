@@ -22,10 +22,20 @@
 
 </select>
 <p><label for="student-no">学生番号</label></p>
-<input type="text" name="no" id="student-no" maxlength="10" placeholder="学生番号を入力してください" required>
+<input type="text"
+	   name="no"
+	   id="student-no"
+	   maxlength="10"
+	   placeholder="学生番号を入力してください"
+	   required>
 
 <p><label for="student-name">氏名</label></p>
-<input type="text" name="name" id="student-name" maxlength="30" placeholder="氏名を入力して下さい" required>
+<input type="text"
+	   name="name"
+	   id="student-name"
+	   maxlength="30"
+	   placeholder="氏名を入力して下さい"
+	   required>
 
 <p><label for="student-class">クラス</label></p>
 <p><select name="class_num" id="student-class" required>
