@@ -31,6 +31,7 @@ public class StudentCreateAction extends Action {
             student.setSchoolCd(schoolCd);
 
 
+
             StudentDAO dao = new StudentDAO();
             boolean result = dao.save(student);
 
