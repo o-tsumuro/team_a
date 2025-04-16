@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import bean.School;
 import bean.Subject;
 import dao.SubjectDAO;
 import tool.Action;
@@ -19,10 +20,11 @@ public class SubjectCreateExecuteAction extends Action {
 		String cd = req.getParameter("cd");
 		String name = req.getParameter("name");
 		String schoolCd = (String) session.getAttribute("user_school_cd");
+		School school = (School) session.getAttribute("school");
 
 		if (cd.length() != 3){
 			session.setAttribute("message", "科目コードは3文字で入力してください。");
-			return "#";
+			return "/subject/subjectCreate.jsp";
 		}
 
 		Subject sbj = new Subject();
@@ -32,7 +34,10 @@ public class SubjectCreateExecuteAction extends Action {
 
 		SubjectDAO dao = new SubjectDAO();
 
-//		if (dao.get(schoolCd, school))
+		if (dao.get(schoolCd, school) != null){
+			session.setAttribute("message","科目コードが重複しています。");
+			return "/subject/subjectCreate.jsp";
+		}
 
 		if (dao.save(sbj)){
 			return "/subject/subjectCreateDone.jsp";
