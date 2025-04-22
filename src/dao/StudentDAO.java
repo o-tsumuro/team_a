@@ -139,4 +139,16 @@ public class StudentDAO extends DAO {
          }
          return list;
     }
+    public List<Integer> getEntYear() throws Exception {
+    	List<Integer> list = new ArrayList<>();
+    	Connection con = getConnection();
+        PreparedStatement st = con.prepareStatement(
+            "SELECT DISTINCT ent_year FROM student ORDER BY ent_year"
+        );
+        ResultSet rs = st.executeQuery();
+        while (rs.next()) {
+        	list.add(rs.getInt("ent_year"));
+        }
+        return list;
+    }
 }
