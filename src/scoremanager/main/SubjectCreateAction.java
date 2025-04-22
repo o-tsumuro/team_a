@@ -15,7 +15,6 @@ public class SubjectCreateAction extends Action {
 		HttpSession session = req.getSession();
 
 
-
 		return "/subject/subjectCreate.jsp";
 	}
 
