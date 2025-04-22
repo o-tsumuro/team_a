@@ -13,6 +13,6 @@
     <h1>得点管理システム</h1>
         <c:if test="${not empty teacher}">
         	<span>${teacher.name}</span>
-        	<a href="Logout.action">ログアウト</a>
+        	<a href="/team_a/main/Logout.action">ログアウト</a>
     	</c:if>
 </div>
