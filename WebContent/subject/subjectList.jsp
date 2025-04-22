@@ -19,7 +19,10 @@
 				<a href="${sbjUpdateUrl}">変更</a>
 			</td>
 			<td>
-				<a href="#">削除</a>
+				<c:url value="./SubjectDelete.action" var="sbjDeleteUrl">
+					<c:param name="cd" value="${sbj.cd}" />
+				</c:url>
+				<a href="${sbjDeleteUrl}">削除</a>
 			</td>
 		</tr>
 	</c:forEach>

@@ -117,7 +117,21 @@ public class SubjectDAO extends DAO {
 	}
 
 	public boolean delete(Subject sbj)throws Exception {
-		return true;
+
+		Connection con = getConnection();
+		PreparedStatement st;
+
+		st = con.prepareStatement(
+				"DELETE FROM SUBJECT WHERE CD = ? AND SCHOOL_CD = ?");
+		st.setString(1, sbj.getCd());
+		st.setString(2, sbj.getSchoolCd());
+
+		int num = st.executeUpdate();
+
+		st.close();
+		con.close();
+
+		return num == 1;
 	}
 
 }
