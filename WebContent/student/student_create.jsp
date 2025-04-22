@@ -32,7 +32,7 @@
 
 
 <p><label for="student-no">学生番号</label></p>
-<input type="text"
+<input type="number"
 	   name="no"
 	   id="student-no"
 	   maxlength="10"
