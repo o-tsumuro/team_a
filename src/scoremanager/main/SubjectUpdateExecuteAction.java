@@ -9,8 +9,7 @@ import bean.Subject;
 import dao.SubjectDAO;
 import tool.Action;
 
-//まだ完成してないです
-public class SubjectCreateExecuteAction extends Action {
+public class SubjectUpdateExecuteAction extends Action {
 
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
@@ -26,29 +25,13 @@ public class SubjectCreateExecuteAction extends Action {
 		sbj.setName(name);
 		sbj.setSchoolCd(school.getCd());
 
-		session.setAttribute("subject", sbj);
-
-
-		if (cd.length() != 3){
-			session.setAttribute("sbjCdError", "科目コードは3文字で入力してください。");
-			return "/subject/subjectCreate.jsp";
-		}
-
-
 		SubjectDAO dao = new SubjectDAO();
 
-		if (dao.get(cd, school) != null){
-			session.setAttribute("sbjCdError","科目コードが重複しています。");
-			return "/subject/subjectCreate.jsp";
+		if (dao.save(sbj)) {
+			return "/subject/subjectUpdateDone.jsp";
 		}
 
-		if (dao.save(sbj)){
-			return "/subject/subjectCreateDone.jsp";
-		}
-
-
-
-		return null;
+		return "/subject/subjectList.jsp";
 	}
 
 }

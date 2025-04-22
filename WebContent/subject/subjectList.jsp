@@ -13,8 +13,13 @@
 			<td>${sbj.cd}</td>
 			<td>${sbj.name}</td>
 			<td>
-			<a href="#">変更</a>
-			<a href="#">削除</a>
+				<c:url value="./SubjectUpdate.action" var="sbjUpdateUrl">
+					<c:param name="cd" value="${sbj.cd}" />
+				</c:url>
+				<a href="${sbjUpdateUrl}">変更</a>
+			</td>
+			<td>
+				<a href="#">削除</a>
 			</td>
 		</tr>
 	</c:forEach>
