@@ -23,6 +23,8 @@ public class TestListAction extends Action {
 		Teacher teacher = (Teacher) session.getAttribute("teacher");
 		School school = (School) session.getAttribute("school");
 
+		int[] testEntYear = {2000, 2001, 2003, 2004, 2005};
+
 		//ユーザーが所属している学校のクラスデータを取得
 		ClassNumDAO classDao = new ClassNumDAO();
 		List<String> classList = classDao.filter(school);
@@ -33,9 +35,10 @@ public class TestListAction extends Action {
 
 		session.setAttribute("classList", classList);
 		session.setAttribute("subjectList", sbjList);
+		session.setAttribute("entYearList", testEntYear);
 
 
-		return null;
+		return "../test/testList.jsp";
 	}
 
 }
