@@ -1,10 +1,15 @@
 package scoremanager.main;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import bean.School;
+import bean.Student;
+import bean.Subject;
+import bean.Teacher;
 import dao.ClassNumDAO;
 import dao.StudentDAO;
 import dao.SubjectDAO;
@@ -32,28 +37,75 @@ public class TestRegistAction extends Action {
 		ClassNumDAO classNumDao = new ClassNumDAO();
 		SubjectDAO subjectDao = new SubjectDAO();
 
-		session.setAttribute("entYearList", studentDao.getEntYear());
-		session.setAttribute("classList", classNumDao.filter(school));
-		session.setAttribute("subjectList", subjectDao.filter(school));
+	    List<Integer> entYearList = studentDao.getEntYear();
+	    List<String> classList = classNumDao.filter(school);
+	    List<Subject> subjectList = subjectDao.filter(school);
+
+	    req.setAttribute("entYearList", entYearList);
+	    req.setAttribute("classList", classList);
+	    req.setAttribute("subjectList", subjectList);
 
 		return "/test/testRegist.jsp";
     }
 
-    private String handlePost(HttpServletRequest req, HttpServletResponse resp) throws Exception {
-    	req.setCharacterEncoding("UTF-8");
-    	resp.setContentType("text/html; charset=UTF-8");
+	private String handlePost(HttpServletRequest req, HttpServletResponse resp) throws Exception {
+	    req.setCharacterEncoding("UTF-8");
+	    resp.setContentType("text/html; charset=UTF-8");
 
-    	int selectedYear = Integer.parseInt(req.getParameter("entYear"));
-    	String selectedClass = req.getParameter("class");
-    	String selectedSubjectCd = req.getParameter("subject");
-    	int selectedTimes = Integer.parseInt(req.getParameter("times"));
+	    String yearStr = req.getParameter("entYear");
+	    String selectedClass = req.getParameter("class");
+	    String selectedSubjectCd = req.getParameter("subject");
+	    String timesStr = req.getParameter("times");
 
-    	req.setAttribute("selectedYear", selectedYear);
-    	req.setAttribute("selectedClass", selectedClass);
-    	req.setAttribute("selectedSubjectCd", selectedSubjectCd);
-    	req.setAttribute("selectedTimes", selectedTimes);
+	    if (yearStr == null || yearStr.isEmpty() ||
+	        selectedClass == null || selectedClass.isEmpty() ||
+	        selectedSubjectCd == null || selectedSubjectCd.isEmpty() ||
+	        timesStr == null || timesStr.isEmpty()) {
 
-        return "/test/testRegist.jsp";
-    }
+	        req.setAttribute("error", "入学年度とクラスと科目と回数を選択してください");
+
+	        HttpSession session = req.getSession();
+	        School school = (School) session.getAttribute("school");
+	        StudentDAO studentDao = new StudentDAO();
+	        ClassNumDAO classNumDao = new ClassNumDAO();
+	        SubjectDAO subjectDao = new SubjectDAO();
+	        req.setAttribute("entYearList", studentDao.getEntYear());
+	        req.setAttribute("classList", classNumDao.filter(school));
+	        req.setAttribute("subjectList", subjectDao.filter(school));
+
+	        return "/test/testRegist.jsp";
+	    }
+
+	    int selectedYear = Integer.parseInt(yearStr);
+	    int selectedTimes = Integer.parseInt(timesStr);
+
+	    req.setAttribute("selectedYear", selectedYear);
+	    req.setAttribute("selectedClass", selectedClass);
+	    req.setAttribute("selectedSubjectCd", selectedSubjectCd);
+	    req.setAttribute("selectedTimes", selectedTimes);
+
+	    HttpSession session = req.getSession();
+	    Teacher teacher = (Teacher) session.getAttribute("teacher");
+	    String schoolCd = teacher.getSchoolCd();
+	    StudentDAO studentDao = new StudentDAO();
+
+	    School school = (School) session.getAttribute("school");
+	    SubjectDAO subjectDao = new SubjectDAO();
+	    List<Subject> subjectList = subjectDao.filter(school);
+
+	    Subject selectedSubject = null;
+	    for (Subject s : subjectList) {
+	        if (s.getCd().equals(selectedSubjectCd)) {
+	            selectedSubject = s;
+	            break;
+	        }
+	    }
+
+	    List<Student> studentList = studentDao.filter(schoolCd, selectedYear, selectedClass, true);
+	    req.setAttribute("studentList", studentList);
+	    req.setAttribute("selectedSubject", selectedSubject);
+
+	    return "/test/testRegist.jsp";
+	}
 
 }
