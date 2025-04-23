@@ -11,7 +11,7 @@
 
 <div class="header-wrapper">
     <h1>得点管理システム</h1>
-        <c:if test="${not empty teacher}">
+        <c:if test="${not empty user and not empty teacher}">
         	<span>${teacher.name}</span>
         	<a href="/team_a/main/Logout.action">ログアウト</a>
     	</c:if>
