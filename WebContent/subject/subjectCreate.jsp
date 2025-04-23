@@ -5,8 +5,8 @@
 <h2>科目情報登録</h2>
 
 <form action="../main/SubjectCreateExecute.action" method="post">
-<label>
-	<p>科目コード</p>
+
+<label for="cd">科目コード</label>
 	<input type="text"
 			name="cd"
 			maxlength="3"
@@ -16,17 +16,14 @@
 	<c:if test="${not empty sbjCdError}">
 	    <li>${sbjCdError}</li>
 	</c:if>
-</label>
 <br>
-<label>
-	<p>科目名</p>
+<label for="name">科目名</label>
 	<input type="text"
 			name="name"
 			maxlength="20"
 			placeholder="科目名を入力してください。"
 			value="${subject.name}"
 			required />
-</label>
 
 <input type="submit" value="登録">
 </form>

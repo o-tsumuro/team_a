@@ -5,22 +5,19 @@
 <h2>科目情報変更</h2>
 
 <form action="../main/SubjectUpdateExecute.action" method="post">
-<label>
-<p>科目コード</p>
+
+<label for="cd">科目コード</label>
 <input type="text"
 		name="cd"
 		value="${subject.cd}"
 		readonly />
-</label>
 <br>
-<label>
-<p>科目名</p>
+<label for="name">科目名</label>
 <input type="text"
 		name="name"
 		maxlength="20"
 		value="${subject.name}"
 		required />
-</label>
 
 <c:if test="${not empty message}">
     <li>${message}</li>
