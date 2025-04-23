@@ -125,6 +125,25 @@ public class StudentDAO extends DAO {
 
             return list;
     }
+    public List<Student> filter(String schoolCd)
+        	throws Exception{
+            Connection con = getConnection();
+            PreparedStatement st = con.prepareStatement(
+                "SELECT * FROM student WHERE SCHOOL_CD = ? "
+            );
+
+            st.setString(1, schoolCd);
+
+
+            ResultSet rs = st.executeQuery();
+
+            List<Student> list = postFilter(rs);
+
+            rs.close();
+            st.close();
+
+            return list;
+    }
     public List<Student> postFilter (ResultSet rs) throws Exception {
          List<Student> list = new ArrayList<>();
          while (rs.next()) {
