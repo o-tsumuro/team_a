@@ -66,5 +66,5 @@
 
 <p><input value="登録して終了"type="submit" name="end"></p>
 </form>
-<a href="student-list.jsp">戻る</a>
+<a href="/team_a/main/StudentList.action">戻る</a>
 <%@include file="/includes/footer.jsp" %>
