@@ -1,7 +1,9 @@
 package scoremanager.main;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,8 +15,7 @@ import dao.TestDAO;
 import tool.Action;
 
 public class TestRegistExecuteAction extends Action {
-
-	@Override
+    @Override
     public String execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
         req.setCharacterEncoding("UTF-8");
 
@@ -28,10 +29,19 @@ public class TestRegistExecuteAction extends Action {
         String schoolCd = teacher.getSchoolCd();
 
         List<Test> testList = new ArrayList<>();
+        Map<String, String> errorMap = new HashMap<>();
 
         for (String studentNo : studentNos) {
             String scoreStr = req.getParameter("score_" + studentNo);
-            int score = Integer.parseInt(scoreStr);
+            int score = -1;
+            try {
+                score = Integer.parseInt(scoreStr);
+                if (score < 0 || score > 100) {
+                    errorMap.put(studentNo, "0〜100の範囲で入力してください");
+                }
+            } catch (NumberFormatException e) {
+                errorMap.put(studentNo, "数値を入力してください");
+            }
 
             Test test = new Test();
             test.setStudentNo(studentNo);
@@ -44,11 +54,20 @@ public class TestRegistExecuteAction extends Action {
             testList.add(test);
         }
 
+        if (!errorMap.isEmpty()) {
+            req.setAttribute("testList", testList);
+            req.setAttribute("errorMap", errorMap);
+            req.setAttribute("selectedSubjectCd", subjectCd);
+            req.setAttribute("selectedClass", classNum);
+            req.setAttribute("selectedTimes", times);
+            // subjectList, studentList, classList, entYearList 等も必要なら渡す
+            return "/test/test_regist.jsp";
+        }
+
         TestDAO testDao = new TestDAO();
         testDao.save(testList);
 
-        req.setAttribute("message", "テスト結果を保存しました");
-        return "/test/testInsertResult.jsp";
+        req.setAttribute("message", "登録が完了しました");
+        return "/test/test_regist_done.jsp";
     }
-
 }

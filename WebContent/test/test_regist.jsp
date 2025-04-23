@@ -78,8 +78,11 @@
                     </td>
                     <td>${stu.name}</td>
                     <td>
-                        <input type="number" name="score_${stu.no}" min="0" max="100" required>
-                    </td>
+    					<input type="number" name="score_${stu.no}" min="0" max="100" required>
+    					<c:if test="${not empty errorMap[stu.no]}">
+        					<br><span style="color:red">${errorMap[stu.no]}</span>
+    					</c:if>
+					</td>
                 </tr>
             </c:forEach>
         </table>

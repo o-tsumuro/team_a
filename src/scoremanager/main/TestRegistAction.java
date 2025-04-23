@@ -41,11 +41,11 @@ public class TestRegistAction extends Action {
 	    List<String> classList = classNumDao.filter(school);
 	    List<Subject> subjectList = subjectDao.filter(school);
 
-	    req.setAttribute("entYearList", entYearList);
-	    req.setAttribute("classList", classList);
-	    req.setAttribute("subjectList", subjectList);
+	    session.setAttribute("entYearList", entYearList);
+	    session.setAttribute("classList", classList);
+	    session.setAttribute("subjectList", subjectList);
 
-		return "/test/testRegist.jsp";
+		return "/test/test_regist.jsp";
     }
 
 	private String handlePost(HttpServletRequest req, HttpServletResponse resp) throws Exception {
@@ -73,7 +73,7 @@ public class TestRegistAction extends Action {
 	        req.setAttribute("classList", classNumDao.filter(school));
 	        req.setAttribute("subjectList", subjectDao.filter(school));
 
-	        return "/test/testRegist.jsp";
+	        return "/test/test_regist.jsp";
 	    }
 
 	    int selectedYear = Integer.parseInt(yearStr);
@@ -105,7 +105,7 @@ public class TestRegistAction extends Action {
 	    req.setAttribute("studentList", studentList);
 	    req.setAttribute("selectedSubject", selectedSubject);
 
-	    return "/test/testRegist.jsp";
+	    return "/test/test_regist.jsp";
 	}
 
 }
