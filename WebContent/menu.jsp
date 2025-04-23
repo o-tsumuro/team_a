@@ -4,7 +4,7 @@
 
 <h2>メニュー</h2>
 
-<a href="#">学生管理</a>
+<a href="/team_a/main/StudentList.action">学生管理</a>
 
 <div class="score_management">
 	成績管理
