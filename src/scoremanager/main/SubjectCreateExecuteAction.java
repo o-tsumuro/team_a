@@ -43,6 +43,7 @@ public class SubjectCreateExecuteAction extends Action {
 		}
 
 		if (dao.save(sbj)){
+			session.removeAttribute("subject");
 			return "/subject/subjectCreateDone.jsp";
 		}
 

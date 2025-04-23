@@ -20,6 +20,7 @@ public class SubjectDeleteExecuteAction extends Action {
 		SubjectDAO dao = new SubjectDAO();
 
 		if (dao.delete(sbj)) {
+			session.removeAttribute("subject");
 			return "/subject/subjectDeleteDone.jsp";
 		}
 

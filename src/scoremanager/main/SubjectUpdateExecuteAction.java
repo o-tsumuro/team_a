@@ -28,6 +28,7 @@ public class SubjectUpdateExecuteAction extends Action {
 		SubjectDAO dao = new SubjectDAO();
 
 		if (dao.save(sbj)) {
+			session.removeAttribute("subject");
 			return "/subject/subjectUpdateDone.jsp";
 		}
 
