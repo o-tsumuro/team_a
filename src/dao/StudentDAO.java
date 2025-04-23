@@ -106,6 +106,49 @@ public class StudentDAO extends DAO {
 
         return list;
     }
+
+
+    public List<Student> filter(String schoolCd, int entYear)
+        	throws Exception{
+            Connection con = getConnection();
+            PreparedStatement st = con.prepareStatement(
+                "SELECT * FROM student WHERE SCHOOL_CD = ? AND ENT_YEAR = ? "
+            );
+
+            st.setString(1, schoolCd);
+            st.setInt(2, entYear);
+
+
+            ResultSet rs = st.executeQuery();
+
+            List<Student> list = postFilter(rs);
+
+            rs.close();
+            st.close();
+
+            return list;
+        }
+    public List<Student> filter(String schoolCd, int entYear, String classNum)
+        	throws Exception{
+            Connection con = getConnection();
+            PreparedStatement st = con.prepareStatement(
+                "SELECT * FROM student WHERE SCHOOL_CD = ? AND ENT_YEAR = ? "
+            );
+
+            st.setString(1, schoolCd);
+            st.setInt(2, entYear);
+            st.setString(3,classNum);
+
+
+            ResultSet rs = st.executeQuery();
+
+            List<Student> list = postFilter(rs);
+
+            rs.close();
+            st.close();
+
+            return list;
+        }
     public List<Student> filter(String schoolCd,boolean isAttend)
         	throws Exception{
             Connection con = getConnection();
