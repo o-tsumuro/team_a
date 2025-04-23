@@ -5,28 +5,25 @@
 <h2>科目情報登録</h2>
 
 <form action="../main/SubjectCreateExecute.action" method="post">
-<label>
-<p>科目コード</p>
-<input type="text"
-		name="cd"
-		maxlength="3"
-		placeholder="科目コードを入力してください。"
-		value="${cd}">
-</label>
+
+<label for="cd">科目コード</label>
+	<input type="text"
+			name="cd"
+			maxlength="3"
+			placeholder="科目コードを入力してください。"
+			value="${subject.cd}"
+			required />
+	<c:if test="${not empty sbjCdError}">
+	    <li>${sbjCdError}</li>
+	</c:if>
 <br>
-<label>
-<p>科目名</p>
-<input type="text"
-		name="name"
-		maxlength="20"
-		placeholder="科目名を入力してください。"
-		value="${name}">
-</label>
-
-<c:if test="${not empty message}">
-    <li>${message}</li>
-</c:if>
-
+<label for="name">科目名</label>
+	<input type="text"
+			name="name"
+			maxlength="20"
+			placeholder="科目名を入力してください。"
+			value="${subject.name}"
+			required />
 
 <input type="submit" value="登録">
 </form>

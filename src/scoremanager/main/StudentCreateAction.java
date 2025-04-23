@@ -41,12 +41,12 @@ public class StudentCreateAction extends Action {
                 request.setAttribute("message", "学生情報の登録に失敗しました。");
             }
 
-            return "result.jsp";
+            return "/student/student_create_done.jsp";
 
         } catch (Exception e) {
 
             System.out.println( "エラーが発生しました: " + e.getMessage());
-            return "error.jsp";
+            return "errer.jsp";
         }
     }
 }

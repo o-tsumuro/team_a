@@ -21,7 +21,7 @@ public class StudentCreateExecuteAction extends Action {
         // 入学年度が未選択の場合
         if (entYear == null || entYear.isEmpty()) {
             request.setAttribute("error", "入学年度を選択してください。");
-            return "/student/studentCreate.jsp";
+            return "/student/student_create.jsp";
         }
 
         // 学生番号が入力されている場合、重複チェック
@@ -31,7 +31,7 @@ public class StudentCreateExecuteAction extends Action {
 
             if (existingStudent != null) {
                 request.setAttribute("error2", "学生番号が重複しています。");
-                return "/student/studentCreate.jsp";
+                return "/student/student_create.jsp";
             }
         }
 

@@ -31,24 +31,43 @@ public class ClassNumDAO extends DAO {
     	return cn;
 	}
 
+
+	//ちょっと変更しました(大江)
 	public List<String> filter(School school) throws Exception {
-	    List<String> classNumList = new ArrayList<>();
 
-	    try (Connection con = getConnection();
-	         PreparedStatement st = con.prepareStatement(
-	             "SELECT CLASS_NUM FROM CLASS_NUM WHERE SCHOOL_CD = ?")) {
+		List<String> classNumList = new ArrayList<>();
 
-	        st.setString(1, school.getCd());
+	    Connection con = getConnection();
+	    PreparedStatement st = con.prepareStatement(
+             "SELECT CLASS_NUM FROM CLASS_NUM WHERE SCHOOL_CD = ?");
 
-	        try (ResultSet rs = st.executeQuery()) {
-	            while (rs.next()) {
-	                classNumList.add(rs.getString("class_num"));
-	            }
-	        }
+	    st.setString(1, school.getCd());
+	    ResultSet rs = st.executeQuery();
+
+	    while(rs.next()) {
+	    	classNumList.add(rs.getString("class_num"));
 	    }
 
 	    return classNumList;
 	}
+//public List<String> filter(School school) throws Exception {
+//    List<String> classNumList = new ArrayList<>();
+//
+//    try (Connection con = getConnection();
+//         PreparedStatement st = con.prepareStatement(
+//             "SELECT CLASS_NUM FROM CLASS_NUM WHERE SCHOOL_CD = ?")) {
+//
+//        st.setString(1, school.getCd());
+//
+//        try (ResultSet rs = st.executeQuery()) {
+//            while (rs.next()) {
+//                classNumList.add(rs.getString("class_num"));
+//            }
+//        }
+//    }
+//
+//    return classNumList;
+//}
 
 
 }
