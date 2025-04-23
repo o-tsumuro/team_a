@@ -13,14 +13,11 @@ public class LogoutAction extends Action {
 	public String execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
 		HttpSession session=req.getSession();
 
-		if (session.getAttribute("teacher") != null) {
-			session.removeAttribute("teacher");
-			User user = (User) session.getAttribute("user");
-			user.setAuthenticated(false);
-			return "/auth/logout.jsp";
-		}
+		session.removeAttribute("teacher");
+		User user = (User) session.getAttribute("user");
+		user.setAuthenticated(false);
+		return "/auth/logout.jsp";
 
-		return "#";
 	}
 
 }
