@@ -61,6 +61,7 @@ public class StudentDAO extends DAO {
 
         rs.close();
         st.close();
+        con.close();
 
         return student;
     }
@@ -83,6 +84,7 @@ public class StudentDAO extends DAO {
 
         rs.close();
         st.close();
+        con.close();
 
         return list;
     }
@@ -103,6 +105,7 @@ public class StudentDAO extends DAO {
 
         rs.close();
         st.close();
+        con.close();
 
         return list;
     }
@@ -125,6 +128,7 @@ public class StudentDAO extends DAO {
 
             rs.close();
             st.close();
+            con.close();
 
             return list;
         }
@@ -146,6 +150,7 @@ public class StudentDAO extends DAO {
 
             rs.close();
             st.close();
+            con.close();
 
             return list;
         }
@@ -165,6 +170,7 @@ public class StudentDAO extends DAO {
 
             rs.close();
             st.close();
+            con.close();
 
             return list;
     }
@@ -184,6 +190,7 @@ public class StudentDAO extends DAO {
 
             rs.close();
             st.close();
+            con.close();
 
             return list;
     }
