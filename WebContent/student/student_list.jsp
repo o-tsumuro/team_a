@@ -64,10 +64,10 @@
                 </td>
 
                 <td>
-                    <c:url value="./StudentUpdate.action" var="updateUrl">
-                        <c:param name="no" value="${student.no}" />
-                    </c:url>
-                    <a href="${updateUrl}">変更</a>
+              <c:url value="./StudentUpdate.action" var="updateUrl">
+    			<c:param name="no" value="${student.no}" />
+				</c:url>
+				<a href="${updateUrl}">変更</a>
 
                 </td>
             </tr>
