@@ -10,8 +10,8 @@ import bean.Test;
  	public void save(List<Test> testList) throws Exception {
          Connection con = getConnection();
 
-         String sql = "INSERT INTO test (student_no, subject_cd, school_cd, no, point, class_num) " +
-                      "VALUES (?, ?, ?, ?, ?, ?)";
+         String sql = "MERGE INTO test KEY(student_no, subject_cd, school_cd, no) " +
+                 	  "VALUES (?, ?, ?, ?, ?, ?)";
          PreparedStatement st = con.prepareStatement(sql);
 
          for (Test test : testList) {
