@@ -28,10 +28,15 @@ public class StudentListAction extends Action {
 
 	    List<Student> studentList = new ArrayList<>();
 	    StudentDAO dao = new StudentDAO();
+
 	    List<String> classNumList = new ArrayList<>();
 	    ClassNumDAO dao2 = new ClassNumDAO();
+
 	    classNumList = dao2.filter(school);  // ← すでに取得してるなら
 	    request.setAttribute("classNumList", classNumList);
+
+	    int studentCount = studentList.size();//件数取得
+	    request.setAttribute("studentCount", studentCount);
 
 	    boolean hasEntYear = entYearStr != null && !entYearStr.isEmpty();
 	    boolean hasClassNum = classNum != null && !classNum.isEmpty();
@@ -110,6 +115,7 @@ public class StudentListAction extends Action {
 
 
 	    request.setAttribute("studentList", studentList);
+	    request.setAttribute("studentCount", studentList.size());
 	    return "../student/student_list.jsp";
 	}
 }
