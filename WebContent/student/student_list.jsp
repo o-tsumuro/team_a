@@ -2,23 +2,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ include file="/includes/header.jsp" %>
 <%@ include file="/includes/sidebar.jsp" %>
-<%@ page import="dao.ClassNumDAO" %>
+
 <h2>学生管理</h2>
 
-<a href="./StudentCreate.action">新規登録</a>
-<%@ page import="dao.ClassNumDAO" %>
-<%@ page import="bean.School" %>
-<%@ page import="java.util.List" %>
-
-<%
-
-    School school = (School) session.getAttribute("school"); 
-
-
-    ClassNumDAO classNumDAO = new ClassNumDAO();
-    List<String> classNumList = classNumDAO.filter(school); 
-%>
-
+<a href="/team_a/student/student_create.jsp">新規登録</a>
 <form action="StudentList.action" method="post">
     <p>入学年度:</p>
     <select name="entYear">
@@ -31,22 +18,23 @@
         <% } %>
     </select><br>
 
-    <p>クラス番号:</p>
-    <select name="classNum">
-        <option value="">------</option>
-        <%
-            for (String classNum : classNumList) {
-        %>
-            <option value="<%= classNum %>"><%= classNum %></option>
-        <% } %>
-    </select><br>
+<p>クラス番号:</p>
+<select name="classNum">
+    <option value="">------</option>
+    <c:forEach var="classNum" items="${classNumList}">
+        <option value="${classNum}">${classNum}</option>
+    </c:forEach>
+</select><br>
+
+<c:if test="${not empty message}">
+    <p style="color:red;">${message}</p>
+</c:if>
 
     <p>在学中:</p>
-    <input type="checkbox" name="isAttend" value="true">在学中<br>
+    <input type="checkbox" name="isAttend" value="true" checked>在学中<br>
 
     <input type="submit" value="絞り込み">
 </form>
-
 
 
 <table border="1">
