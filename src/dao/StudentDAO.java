@@ -218,6 +218,9 @@ public class StudentDAO extends DAO {
         while (rs.next()) {
         	list.add(rs.getInt("ent_year"));
         }
+        rs.close();
+        st.close();
+        con.close();
         return list;
     }
 }
