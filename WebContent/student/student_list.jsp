@@ -48,6 +48,8 @@
 
         </tr>
     </thead>
+    <p>検索結果：${studentCount} 件</p>
+
     <tbody>
         <c:forEach var="student" items="${studentList}">
             <tr>
