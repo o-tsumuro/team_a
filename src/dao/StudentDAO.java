@@ -223,4 +223,25 @@ public class StudentDAO extends DAO {
         con.close();
         return list;
     }
+
+    public boolean update(Student student) throws Exception {
+        Connection con = getConnection();
+
+        PreparedStatement st = con.prepareStatement(
+            "UPDATE student SET name = ?, class_num = ?, is_attend = ? WHERE no = ?"
+        );
+
+        st.setString(1, student.getName());
+        st.setInt(2, student.getClassNum());
+        st.setBoolean(3, student.isAttend());
+        st.setInt(4, student.getNo());
+
+        int line = st.executeUpdate();
+
+        st.close();
+        con.close();
+
+        return line > 0;
+    }
+
 }
