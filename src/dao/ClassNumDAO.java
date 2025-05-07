@@ -48,6 +48,9 @@ public class ClassNumDAO extends DAO {
 	    	classNumList.add(rs.getString("class_num"));
 	    }
 
+	    rs.close(); //←close追加した(大庭)
+	    st.close();
+	    con.close();
 	    return classNumList;
 	}
 //public List<String> filter(School school) throws Exception {

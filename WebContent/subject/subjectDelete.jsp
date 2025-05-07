@@ -6,11 +6,12 @@
 
 <form action="../main/SubjectDeleteExecute.action" method="post">
 
-<p>「${subject.name}(${subject.cd})」を削除してもよろしいですか</p>
+	<p>「${subject.name}(${subject.cd})」を削除してもよろしいですか</p>
 
-<input type="submit" value="削除">
+	<button type="submit">削除</button>
 
 </form>
+
 <a href="/team_a/main/SubjectList.action">戻る</a>
 
 <%@include file="/includes/footer.jsp" %>
