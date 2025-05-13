@@ -12,28 +12,45 @@
 	<label for="f3">科目</label>
 
 	<select name="f1">
-		<option>--------</option>
+		<option value="">--------</option>
 		<c:forEach var="entYear" items="${entYearList}">
 		<option value="${entYear}">${entYear}</option>
 		</c:forEach>
 	</select>
 
 	<select name="f2">
-		<option>--------</option>
+		<option value="">--------</option>
 		<c:forEach var="classNum" items="${classList}">
 		<option value="${classNum}">${classNum}</option>
 		</c:forEach>
 	</select>
 
 	<select name="f3">
-		<option>--------</option>
+		<option value="">--------</option>
 		<c:forEach var="subject" items="${subjectList}">
-		<option value="${subject}">${subject.name}</option>
+		<option value="${subject.cd}">${subject.name}</option>
 		</c:forEach>
 	</select>
 
 	<button type="submit">検索</button>
+
+	<c:if test="${not empty sbjListError}">
+	    <li>${sbjListError}</li>
+	</c:if>
+
 </form>
+
+<form action="../main/TestListStudentExecute.action" method="post">
+	<p>学生情報</p>
+
+	<label for="f4">学生番号</label>
+
+
+</form>
+
+<c:if test="${not empty sbjTestList}">
+	<%@include file="testListSubject.jsp" %>
+</c:if>
 
 
 
