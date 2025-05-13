@@ -109,6 +109,7 @@ public class StudentListAction extends Action {
 
 		if (key.equals("010") || key.equals("011")) {
 			request.setAttribute("message", "クラスを指定する場合は入学年度も指定してください");
+			
 		} else {
 			studentList = actions.get(key).get();
 		}
