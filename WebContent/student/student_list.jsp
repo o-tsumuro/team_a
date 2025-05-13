@@ -36,7 +36,11 @@
     <input type="submit" value="絞り込み">
 </form>
 
+<c:if test ="${studentCount == 0}">
+	<p>学生情報が存在しませんでした</p>
+	</c:if>
 
+<c:if test="${studentCount != 0}">
 <table border="1">
     <thead>
         <tr>
@@ -50,29 +54,30 @@
     </thead>
     <p>検索結果：${studentCount} 件</p>
 
-    <tbody>
-        <c:forEach var="student" items="${studentList}">
-            <tr>
-                <td>${student.entYear}</td>
-                <td>${student.no}</td>
-                <td>${student.name}</td>
-                <td>${student.classNum}</td>
-                <td><c:choose>
-                        <c:when test="${student.attend}">〇</c:when>
-                        <c:otherwise>×</c:otherwise>
-                    </c:choose>
-                </td>
+   <tbody>
+       <c:forEach var="student" items="${studentList}">
+           <tr>
+               <td>${student.entYear}</td>
+               <td>${student.no}</td>
+               <td>${student.name}</td>
+               <td>${student.classNum}</td>
+               <td><c:choose>
+                       <c:when test="${student.attend}">〇</c:when>
+                       <c:otherwise>×</c:otherwise>
+                   </c:choose>
+               </td>
 
-                <td>
-              <c:url value="./StudentUpdate.action" var="updateUrl">
-    			<c:param name="no" value="${student.no}" />
-				</c:url>
-				<a href="${updateUrl}">変更</a>
+               <td>
+             <c:url value="./StudentUpdate.action" var="updateUrl">
+   			<c:param name="no" value="${student.no}" />
+			</c:url>
+			<a href="${updateUrl}">変更</a>
 
                 </td>
             </tr>
         </c:forEach>
     </tbody>
 </table>
+</c:if>
 
 <%@ include file="/includes/footer.jsp" %>
