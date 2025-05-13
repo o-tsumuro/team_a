@@ -9,13 +9,13 @@
 
 
 	<p>入学年度: ${student.entYear}</p>
-	<input type="hidden" name="entYear" value="${student.entYear}">
+	<input type="hidden" name="entYear" value="${student.entYear}" readonly>
 
 	<p>学生番号: ${student.no}</p>
-	<input type="hidden" name="no" value="${student.no}">
+	<input type="hidden" name="no" value="${student.no}" readonly>
 
 	<p>氏名:</p>
-	<input type="text" name="name"maxlength="30" value="${student.name}" required><br>
+	<input type="text" name="name" maxlength="10" value="${student.name}" required><br>
 
 	<p>クラス:</p>
 	<select name="classNum" required>
