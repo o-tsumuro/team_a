@@ -4,7 +4,7 @@
 <p>氏名：${student.name}(${student.no})</p>
 <table>
   <tr><th>科目名</th><th>科目コード</th><th>回数</th><th>点数</th></tr>
-  <c:forEach var="t" items="${list}">
+  <c:forEach var="t" items="${studentTestList}">
     <tr>
       <td>${t.subjectName}</td>
       <td>${t.subjectCd}</td>

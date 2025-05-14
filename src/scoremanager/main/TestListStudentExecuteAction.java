@@ -12,7 +12,7 @@ import dao.StudentDAO;
 import dao.TestListStudentDAO;
 import tool.Action;
 
-public class TestListStuentExecuteAction extends Action {
+public class TestListStudentExecuteAction extends Action {
 
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
@@ -27,9 +27,9 @@ public class TestListStuentExecuteAction extends Action {
 		List<TestListStudent> list = testListStudentDAO.filter(student);
 
 	    session.setAttribute("student", student);
-	    session.setAttribute("list", list);
+	    session.setAttribute("studentTestList", list);
 
-		return "/test/testListStudent.jsp";
+		return "/test/testList.jsp";
 	}
 
 }

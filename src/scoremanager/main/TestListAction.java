@@ -7,9 +7,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import bean.School;
+import bean.Student;
 import bean.Subject;
 import bean.Teacher;
 import dao.ClassNumDAO;
+import dao.StudentDAO;
 import dao.SubjectDAO;
 import tool.Action;
 
@@ -37,7 +39,11 @@ public class TestListAction extends Action {
 		session.setAttribute("subjectList", sbjList);
 		session.setAttribute("entYearList", testEntYear);
 
-
+		//ユーザーが所属する学校の学生番号を全件取得
+		StudentDAO studentDao = new StudentDAO();
+		List<Student> studentList = studentDao.filter(teacher.getSchoolCd());
+		session.setAttribute("studentList", studentList);
+;
 		return "../test/testList.jsp";
 	}
 
