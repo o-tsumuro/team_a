@@ -9,16 +9,16 @@
 
 
 	<p>入学年度: ${student.entYear}</p>
-	<input type="hidden" name="entYear" value="${student.entYear}">
+	<input type="hidden" name="entYear" value="${student.entYear}" readonly>
 
 	<p>学生番号: ${student.no}</p>
-	<input type="hidden" name="no" value="${student.no}">
+	<input type="hidden" name="no" value="${student.no}" readonly>
 
 	<p>氏名:</p>
-	<input type="text" name="name" value="${student.name}"><br>
+	<input type="text" name="name" maxlength="10" value="${student.name}" required><br>
 
 	<p>クラス:</p>
-	<select name="classNum">
+	<select name="classNum" required>
 		<option value="">------</option>
 		<c:forEach var="classNum" items="${classNumList}">
 			<option value="${classNum}">${classNum}</option>
@@ -27,8 +27,10 @@
 
 	<p>在学中:</p>
 	<input type="checkbox" name="isAttend" value="true"
-		<c:if test="${student.attend}">checked</c:if>>在学中<br> <input
-		type="submit" value="更新">
+		<c:if test="${student.attend}">checked</c:if>>在学中<br>
+
+	<input type="submit" value="更新">
 </form>
+    <a href="/team_a/main/StudentList.action">戻る</a>
 
 <%@ include file="/includes/footer.jsp"%>

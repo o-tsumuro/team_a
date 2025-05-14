@@ -50,18 +50,21 @@
 <input type="text"
 	   name="name"
 	   id="student-name"
-	   maxlength="30"
+	   maxlength="10"
 	   placeholder="氏名を入力して下さい"
 	   value="${param.name}"
 	   required>
 
-<p><label for="student-class">クラス</label></p>
-<p><select name="class_num" id="student-class" required>
-<option value="">------</option>
-<option value="101" <c:if test="${param.class_num == '101'}">selected</c:if>>101</option>
-<option value="202" <c:if test="${param.class_num == '202'}">selected</c:if>>202</option>
 
-</select></p>
+<p><label for="student-class">クラス</label></p>
+	<select name="classNum" required>
+		<option value="">------</option>
+		<c:forEach var="classNum" items="${classNumList}">
+			<option value="${classNum}">${classNum}</option>
+		</c:forEach>
+	</select><br>
+
+
 
 
 <p><input value="登録して終了"type="submit" name="end"></p>

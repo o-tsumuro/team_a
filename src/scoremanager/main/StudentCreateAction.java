@@ -15,13 +15,14 @@ public class StudentCreateAction extends Action {
             int no = Integer.parseInt(request.getParameter("no"));
             String name = request.getParameter("name");
             int year = Integer.parseInt(request.getParameter("ent_year"));
-            int classNum = Integer.parseInt(request.getParameter("class_num"));
+            int classNum = Integer.parseInt(request.getParameter("classNum"));
             String schoolCd;
 
             HttpSession session = request.getSession(false);
 
             School school = (School) session.getAttribute("school");
             schoolCd = school.getCd();
+
 
             Student student = new Student();
             student.setNo(no);

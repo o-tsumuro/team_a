@@ -31,9 +31,9 @@ public class StudentListAction extends Action {
 		StudentDAO dao = new StudentDAO();
 
 		List<String> classNumList = new ArrayList<>();
-		ClassNumDAO dao2 = new ClassNumDAO();
+		ClassNumDAO classNumDao = new ClassNumDAO();
 
-		classNumList = dao2.filter(school);
+		classNumList = classNumDao.filter(school);
 		request.setAttribute("classNumList", classNumList);
 
 		int studentCount = studentList.size();
@@ -109,6 +109,7 @@ public class StudentListAction extends Action {
 
 		if (key.equals("010") || key.equals("011")) {
 			request.setAttribute("message", "クラスを指定する場合は入学年度も指定してください");
+
 		} else {
 			studentList = actions.get(key).get();
 		}
