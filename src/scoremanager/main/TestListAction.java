@@ -25,7 +25,7 @@ public class TestListAction extends Action {
 		Teacher teacher = (Teacher) session.getAttribute("teacher");
 		School school = (School) session.getAttribute("school");
 
-		int[] testEntYear = {2000, 2001, 2003, 2004, 2005};
+		int[] testEntYear = {2022, 2023, 2024, 2025};
 
 		//ユーザーが所属している学校のクラスデータを取得
 		ClassNumDAO classDao = new ClassNumDAO();
