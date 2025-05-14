@@ -1,8 +1,10 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ include file="/includes/header.jsp"%>
-<%@ include file="/includes/sidebar.jsp"%>
 
+
+<div class="main-container">
+<%@ include file="/includes/sidebar.jsp"%>
 <h2>学生情報編集</h2>
 
 <form action="StudentUpdateExecute.action" method="post">
@@ -32,5 +34,5 @@
 	<input type="submit" value="更新">
 </form>
     <a href="/team_a/main/StudentList.action">戻る</a>
-
+</div>
 <%@ include file="/includes/footer.jsp"%>
