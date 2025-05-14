@@ -1,0 +1,40 @@
+@CHARSET "UTF-8";
+
+/* サイドバー */
+.menu-container {
+    width: 15%;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-right: 1px solid #ddd;
+}
+
+
+.main-container {
+    display: flex;
+    width: 100%;
+
+}
+
+
+/* ヘッダー */
+.header-wrapper {
+    width: 100%;
+    background-color: #add8e6;
+    padding: 5px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+}
+.header-log {
+	text-align: right;
+}
+
+/* フッター */
+.footer-wrapper {
+    width: 100%;
+    background-color: #ddd;
+    padding: 1px;
+    text-align: center;
+    font-size: 15px;
+}
