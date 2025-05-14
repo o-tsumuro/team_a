@@ -43,7 +43,7 @@ public class TestListSubjectExecuteAction extends Action {
 		req.setAttribute("sbjTestList", sbjTestList);
 
 
-		return "/test/testListSubject.jsp";
+		return "/test/testList.jsp";
 	}
 
 }

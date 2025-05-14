@@ -8,7 +8,7 @@
 	<h3>成績管理</h3>
 	<ul class="menu-list">
 		<li><a href="/team_a/main/TestRegist.action">成績登録</a></li>
-		<li><a href="<c:url value='#'/>">成績参照</a></li>
+		<li><a href="/team_a/main/TestList.action">成績参照</a></li>
 	</ul>
-	<p><a href="<c:url value='#'/>">科目管理</a></p>
+	<p><a href="/team_a/main/SubjectList.action">科目管理</a></p>
 </div>
