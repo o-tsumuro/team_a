@@ -136,7 +136,7 @@ public class StudentDAO extends DAO {
         	throws Exception{
             Connection con = getConnection();
             PreparedStatement st = con.prepareStatement(
-                "SELECT * FROM student WHERE SCHOOL_CD = ? AND ENT_YEAR = ? "
+                "SELECT * FROM student WHERE SCHOOL_CD = ? AND ENT_YEAR = ? AND CLASS_NUM = ?"
             );
 
             st.setString(1, schoolCd);

@@ -40,18 +40,24 @@
 
 </form>
 
-<form action="../main/TestListStudentExecute.action" method="post">
+<form action="/team_a/main/TestListStudentExecute.action" method="post">
 	<p>学生情報</p>
 
 	<label for="f4">学生番号</label>
-
-
+	<select name="student_no" id="f4">
+		<c:forEach var="student" items="${sessionScope.studentList}">
+			<option value="${student.no}">${student.no}</option>
+		</c:forEach>
+	</select>
+	<button type="submit">検索</button>
 </form>
 
 <c:if test="${not empty sbjTestList}">
 	<%@include file="testListSubject.jsp" %>
 </c:if>
 
-
+<c:if test="${not empty studentTestList}">
+	<%@include file="testListStudent.jsp" %>
+</c:if>
 
 <%@include file="/includes/footer.jsp" %>
