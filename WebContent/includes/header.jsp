@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <title>得点管理システム</title>
     <link rel="stylesheet" type="text/css" href="<c:url value='/css/style.css'/>">
+    <link rel="stylesheet" type="text/css" href="<c:url value='/css/style2.css'/>">
 </head>
 
 
