@@ -1,5 +1,6 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@include file="/includes/header.jsp" %>
+<div class="main-container">
 <%@include file="/includes/sidebar.jsp" %>
 
 <h2>学生情報登録</h2>
@@ -8,5 +9,6 @@
 
 <a href="/team_a/main/StudentCreateExecute.action">戻る</a>
 <a href="#">学生一覧</a>
+</div>
 
 <%@include file="/includes/footer.jsp" %>
