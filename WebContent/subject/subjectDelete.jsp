@@ -1,17 +1,20 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@include file="/includes/header.jsp" %>
-<%@include file="/includes/sidebar.jsp" %>
 
-<h2>科目情報削除</h2>
+<div class="main-container">
+	<%@include file="/includes/sidebar.jsp" %>
 
-<form action="../main/SubjectDeleteExecute.action" method="post">
+	<h2>科目情報削除</h2>
 
-	<p>「${subject.name}(${subject.cd})」を削除してもよろしいですか</p>
+	<form action="../main/SubjectDeleteExecute.action" method="post">
 
-	<button type="submit">削除</button>
+		<p>「${subject.name}(${subject.cd})」を削除してもよろしいですか</p>
 
-</form>
+		<button type="submit">削除</button>
 
-<a href="/team_a/main/SubjectList.action">戻る</a>
+	</form>
+
+	<a href="/team_a/main/SubjectList.action">戻る</a>
+</div>
 
 <%@include file="/includes/footer.jsp" %>

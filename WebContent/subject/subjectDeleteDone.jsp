@@ -1,11 +1,14 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@include file="/includes/header.jsp" %>
-<%@include file="/includes/sidebar.jsp" %>
 
-<h2>科目情報削除</h2>
+<div class="main-container">
+	<%@include file="/includes/sidebar.jsp" %>
 
-<p>削除が完了しました</p>
+	<h2>科目情報削除</h2>
 
-<a href="/team_a/main/SubjectList.action">科目一覧</a>
+	<p>削除が完了しました</p>
+
+	<a href="/team_a/main/SubjectList.action">科目一覧</a>
+</div>
 
 <%@include file="/includes/footer.jsp" %>
