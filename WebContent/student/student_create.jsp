@@ -3,6 +3,8 @@
 
 <%@include file="/includes/header.jsp" %>
 
+<div class="main-container">
+<%@ include file="/includes/sidebar.jsp"%>
 <h2>学生情報登録</h2>
 
 <p><label for="year-select">入学年度</label><p>
@@ -70,4 +72,5 @@
 <p><input value="登録して終了"type="submit" name="end"></p>
 </form>
 <a href="/team_a/main/StudentList.action">戻る</a>
+</div>
 <%@include file="/includes/footer.jsp" %>
