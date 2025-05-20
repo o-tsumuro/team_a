@@ -5,9 +5,11 @@
 
 
 <div class="main-container">
-<%@ include file="/includes/sidebar.jsp"%>
+	<%@ include file="/includes/sidebar.jsp"%>
 	<h2>学生管理</h2>
 	<a href="/team_a/main/StudentCreateForm.action">新規登録</a>
+
+
 	<form action="StudentList.action" method="post">
 		<p>入学年度:</p>
 		<select name="entYear">
