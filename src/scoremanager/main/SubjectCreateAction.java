@@ -6,7 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import tool.Action;
 
-//まだ完成してないです
+
 public class SubjectCreateAction extends Action {
 
 	@Override

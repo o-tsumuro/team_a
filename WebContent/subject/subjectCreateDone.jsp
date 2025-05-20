@@ -8,7 +8,7 @@
 	<div class="column-child">
 		<h2>科目情報登録</h2>
 
-		<p>登録が完了しました</p>
+		<p class="completed">登録が完了しました</p>
 
 		<a href="/team_a/main/SubjectCreate.action">戻る</a>
 		<a href="/team_a/main/SubjectList.action">科目一覧</a>

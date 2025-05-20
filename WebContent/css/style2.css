@@ -54,3 +54,7 @@
 	background-color: #99FF99;
 	padding: 10px
 }
+
+.error-message {
+	color: #FFD700;
+}

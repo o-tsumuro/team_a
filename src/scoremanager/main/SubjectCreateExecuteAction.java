@@ -9,7 +9,7 @@ import bean.Subject;
 import dao.SubjectDAO;
 import tool.Action;
 
-//まだ完成してないです
+
 public class SubjectCreateExecuteAction extends Action {
 
 	@Override
@@ -26,11 +26,10 @@ public class SubjectCreateExecuteAction extends Action {
 		sbj.setName(name);
 		sbj.setSchoolCd(school.getCd());
 
-		session.setAttribute("subject", sbj);
-
+		req.setAttribute("subject", sbj);
 
 		if (cd.length() != 3){
-			session.setAttribute("sbjCdError", "科目コードは3文字で入力してください。");
+			req.setAttribute("sbjCdError", "科目コードは3文字で入力してください。");
 			return "/subject/subjectCreate.jsp";
 		}
 
@@ -38,7 +37,7 @@ public class SubjectCreateExecuteAction extends Action {
 		SubjectDAO dao = new SubjectDAO();
 
 		if (dao.get(cd, school) != null){
-			session.setAttribute("sbjCdError","科目コードが重複しています。");
+			req.setAttribute("sbjCdError","科目コードが重複しています。");
 			return "/subject/subjectCreate.jsp";
 		}
 
@@ -47,9 +46,8 @@ public class SubjectCreateExecuteAction extends Action {
 			return "/subject/subjectCreateDone.jsp";
 		}
 
+		return "/error.jsp";
 
-
-		return null;
 	}
 
 }
