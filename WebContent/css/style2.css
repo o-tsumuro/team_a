@@ -16,6 +16,12 @@
 	padding: 15px;
 }
 
+/* input要素を横長に */
+.column-child input {
+	width: 100%;
+	height: 20px;
+}
+
 /* テーブル全体を横長に */
 .column-child table {
   width: 100%;
@@ -41,4 +47,10 @@
 .column-child a[href$="SubjectCreate.action"] {
   align-self: flex-end;
   margin-bottom: 10px;
+}
+
+.completed {
+	width: 100%;
+	background-color: #99FF99;
+	padding: 10px
 }

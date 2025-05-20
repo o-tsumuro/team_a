@@ -8,7 +8,7 @@
 	<div class="column-child">
 		<h2>科目情報削除</h2>
 
-		<p>削除が完了しました</p>
+		<p class="completed">削除が完了しました</p>
 
 		<a href="/team_a/main/SubjectList.action">科目一覧</a>
 	</div>
