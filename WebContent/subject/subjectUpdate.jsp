@@ -1,31 +1,34 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@include file="/includes/header.jsp" %>
-<%@include file="/includes/sidebar.jsp" %>
 
-<h2>科目情報変更</h2>
+<div class="main-container">
+	<%@include file="/includes/sidebar.jsp" %>
 
-	<form action="../main/SubjectUpdateExecute.action" method="post">
+	<h2>科目情報変更</h2>
 
-	<label for="cd">科目コード</label>
-	<input type="text"
-			name="cd"
-			value="${subject.cd}"
-			readonly />
-	<br>
-	<label for="name">科目名</label>
-	<input type="text"
-			name="name"
-			maxlength="20"
-			value="${subject.name}"
-			required />
+		<form action="../main/SubjectUpdateExecute.action" method="post">
 
-	<c:if test="${not empty message}">
-	    <li>${message}</li>
-	</c:if>
+		<label for="cd">科目コード</label>
+		<input type="text"
+				name="cd"
+				value="${subject.cd}"
+				readonly />
+		<br>
+		<label for="name">科目名</label>
+		<input type="text"
+				name="name"
+				maxlength="20"
+				value="${subject.name}"
+				required />
 
-	<button type="submit">変更</button>
+		<c:if test="${not empty message}">
+		    <li>${message}</li>
+		</c:if>
 
-</form>
-<a href="/team_a/main/SubjectList.action">戻る</a>
+		<button type="submit">変更</button>
+
+	</form>
+	<a href="/team_a/main/SubjectList.action">戻る</a>
+</div>
 
 <%@include file="/includes/footer.jsp" %>
