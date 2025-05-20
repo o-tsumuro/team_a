@@ -19,7 +19,7 @@
 						value="${subject.cd}"
 						required />
 				<c:if test="${not empty sbjCdError}">
-				    <li>${sbjCdError}</li>
+				    <li class="error-message">${sbjCdError}</li>
 				</c:if>
 			<br>
 			<label for="name">科目名</label>
