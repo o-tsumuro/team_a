@@ -1,0 +1,44 @@
+@CHARSET "UTF-8";
+
+
+
+.column-child {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1; /* サイドバーと並ぶように全幅を使う */
+  padding: 20px;
+}
+
+.column-child h2 {
+	width: 100%;
+	background-color: #f0f0f0;
+	padding: 15px;
+}
+
+/* テーブル全体を横長に */
+.column-child table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+/* テーブルのヘッダー */
+.column-child th {
+  background-color: #f0f0f0;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+/* テーブルのデータ部分 */
+.column-child td {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+}
+
+/* 新規登録リンクの右寄せ */
+.column-child a[href$="SubjectCreate.action"] {
+  align-self: flex-end;
+  margin-bottom: 10px;
+}
