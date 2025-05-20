@@ -116,6 +116,7 @@ public class StudentListAction extends Action {
 
 		request.setAttribute("studentList", studentList);
 		request.setAttribute("studentCount", studentList.size());
+		request.setAttribute("classNumList", classNumList);
 
 		return "../student/student_list.jsp";
 	}
