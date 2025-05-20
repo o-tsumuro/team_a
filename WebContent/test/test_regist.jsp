@@ -52,45 +52,49 @@
 	    <input type="submit" value="検索">
 	</form>
 
-	<c:if test="${not empty studentList}">
-	    <p>科目：${selectedSubject.name} (${selectedTimes}回)</p>
-
-	    <form action="/team_a/main/TestRegistExecute.action" method="post">
-
-	        <input type="hidden" name="subjectCd" value="${selectedSubjectCd}">
-	        <input type="hidden" name="classNum" value="${selectedClass}">
-	        <input type="hidden" name="times" value="${selectedTimes}">
-
-	        <table border="1">
-	            <tr>
-	                <th>入学年度</th>
-	                <th>クラス</th>
-	                <th>学生番号</th>
-	                <th>氏名</th>
-	                <th>点数</th>
-	            </tr>
-	            <c:forEach var="stu" items="${studentList}">
-	                <tr>
-	                    <td>${stu.entYear}</td>
-	                    <td>${stu.classNum}</td>
-	                    <td>
-	                        ${stu.no}
-	                        <input type="hidden" name="studentNo" value="${stu.no}">
-	                    </td>
-	                    <td>${stu.name}</td>
-	                    <td>
-	    					<input type="number" name="score_${stu.no}" min="0" max="100" required>
-	    					<c:if test="${not empty errorMap[stu.no]}">
-	        					<br><span style="color:red">${errorMap[stu.no]}</span>
-	    					</c:if>
-						</td>
-	                </tr>
-	            </c:forEach>
-	        </table>
-
-	        <input type="submit" value="登録して終了">
-	    </form>
-	</c:if>
+  <c:if test="${searched}">
+    <c:choose>
+        <c:when test="${not empty studentList}">
+            <!-- テーブル表示 -->
+            <p>科目：${selectedSubject.name} (${selectedTimes}回)</p>
+            <form action="/team_a/main/TestRegistExecute.action" method="post">
+                <input type="hidden" name="subjectCd" value="${selectedSubjectCd}">
+                <input type="hidden" name="classNum" value="${selectedClass}">
+                <input type="hidden" name="times" value="${selectedTimes}">
+                <table border="1">
+                    <tr>
+                        <th>入学年度</th>
+                        <th>クラス</th>
+                        <th>学生番号</th>
+                        <th>氏名</th>
+                        <th>点数</th>
+                    </tr>
+                    <c:forEach var="stu" items="${studentList}">
+                        <tr>
+                            <td>${stu.entYear}</td>
+                            <td>${stu.classNum}</td>
+                            <td>
+                                ${stu.no}
+                                <input type="hidden" name="studentNo" value="${stu.no}">
+                            </td>
+                            <td>${stu.name}</td>
+                            <td>
+                                <input type="number" name="score_${stu.no}" min="0" max="100" required>
+                                <c:if test="${not empty errorMap[stu.no]}">
+                                    <br><span style="color:red">${errorMap[stu.no]}</span>
+                                </c:if>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                </table>
+                <input type="submit" value="登録して終了">
+            </form>
+        </c:when>
+        <c:otherwise>
+            <p style="color:red;">該当する生徒は存在しません。</p>
+        </c:otherwise>
+    </c:choose>
+</c:if>
 </div>
 
 <%@include file="/includes/footer.jsp" %>

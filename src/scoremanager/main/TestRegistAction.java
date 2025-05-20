@@ -44,6 +44,7 @@ public class TestRegistAction extends Action {
 	    session.setAttribute("entYearList", entYearList);
 	    session.setAttribute("classList", classList);
 	    session.setAttribute("subjectList", subjectList);
+	    session.setAttribute("studentList", null);
 
 		return "/test/test_regist.jsp";
     }
@@ -101,6 +102,8 @@ public class TestRegistAction extends Action {
 	        }
 	    }
 
+	    boolean searched = true;
+	    req.setAttribute("searched", searched);
 	    List<Student> studentList = studentDao.filter(schoolCd, selectedYear, selectedClass, true);
 	    req.setAttribute("studentList", studentList);
 	    req.setAttribute("selectedSubject", selectedSubject);
