@@ -6,7 +6,7 @@
 <div class="column-child">
 
 <h2>学生情報変更</h2>
-<p>変更が完了しました</p>
+<p class="completed">変更が完了しました</p>
 <a href="StudentList.action">学生一覧</a>
 </div>
 </div>
