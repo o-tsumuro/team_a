@@ -2,44 +2,105 @@
 
 /* サイドバー */
 .menu-container {
-    width: 15%;
-    background-color: #f8f9fa;
-    padding: 15px;
-    border-right: 1px solid #ddd;
+	width: 15%;
+	background-color: #f8f9fa;
+	padding: 15px;
+	border-right: 1px solid #ddd;
 }
 
 /* コンテンツをサイドバーの横に移動させる */
 .main-container {
-    display: flex;
-    width: 100%;
-
+	display: flex;
+	width: 100%;
 }
-
 
 /* ヘッダー */
 .header-wrapper {
-    width: 100%;
-    background-color: #add8e6;
-    padding: 5px;
-    text-align: left;
-    font-size: 12px;
-    font-weight: bold;
-    border-bottom: 1px solid #ccc;
+	width: 100%;
+	background-color: #add8e6;
+	padding: 5px;
+	text-align: left;
+	font-size: 12px;
+	font-weight: bold;
+	border-bottom: 1px solid #ccc;
 }
+
 .header-log {
 	text-align: right;
 }
 
 /* フッター */
 .footer-wrapper {
-    width: 100%;
-    background-color: #ddd;
-    padding: 1px;
-    text-align: center;
-    font-size: 15px;
+	width: 100%;
+	background-color: #ddd;
+	padding: 1px;
+	text-align: center;
+	font-size: 15px;
 }
 
 .column-child a[href$="StudentCreateForm.action"] {
-  align-self: flex-end;
-  margin-bottom: 10px;
+	align-self: flex-end;
+	margin-bottom: 10px;
+}
+
+.login-container {
+	max-width: 400px;
+	margin: 0 auto;
+	padding: 0px;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	smargin-top: 40px; /* ← 上にマージン追加 */
+	margin-bottom: 40px;
+}
+
+.login-title {
+	text-align: center;
+	background-color: #eee;
+	padding: 10px;
+	border-radius: 4px;
+	margin-top: 0;
+}
+
+.login-submit {
+  width: 30%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.checkbox-group input {
+  margin-right: 5px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.input-group label {
+  display: block;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.input-group input[type="text"],
+.input-group input[type="password"] {
+  width: 80%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #f0f6ff;
+  font-size: 14px;
 }
