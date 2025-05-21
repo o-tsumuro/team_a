@@ -1,4 +1,5 @@
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <table border="1"><thead><th>入学年度</th><th>クラス</th><th>学生番号</th><th>1回</th><th>2回</th></thead></table>
 <tbody>
 	<c:forEach var="t" items="${sbjTestList}">
