@@ -3,8 +3,11 @@
 
 <div class="main-container">
 <%@ include file="/includes/sidebar.jsp" %>
-<p>${message}</p>
+<div class="column-child">
+
+<h2>学生情報変更</h2>
+<p class="completed">変更が完了しました</p>
 <a href="StudentList.action">学生一覧</a>
 </div>
-
+</div>
 <%@ include file="/includes/footer.jsp" %>

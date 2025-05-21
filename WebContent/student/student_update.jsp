@@ -5,7 +5,8 @@
 
 <div class="main-container">
 <%@ include file="/includes/sidebar.jsp"%>
-<h2>学生情報編集</h2>
+<div class="column-child">
+<h2>学生情報変更</h2>
 
 <form action="StudentUpdateExecute.action" method="post">
 
@@ -34,5 +35,6 @@
 	<input type="submit" value="更新">
 </form>
     <a href="/team_a/main/StudentList.action">戻る</a>
+</div>
 </div>
 <%@ include file="/includes/footer.jsp"%>
