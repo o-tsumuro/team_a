@@ -1,0 +1,309 @@
+@CHARSET "UTF-8";
+/* Main container and layout */
+.main-container {
+  font-family: "Hiragino Sans", "Meiryo", sans-serif;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header styling */
+h2 {
+  background-color: #f2f2f2;
+  padding: 10px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border-left: 5px solid #ccc;
+}
+
+/* Form styling */
+form {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+form p {
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+label {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 13px;
+}
+
+select,
+input {
+  padding: 5px;
+  margin-right: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 13px;
+  min-width: 150px;
+}
+
+/* Button styling */
+button[type="submit"] {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 6px 15px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+button[type="submit"]:hover {
+  background-color: #5a6268;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+table,
+th,
+td {
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+  padding: 8px;
+  text-align: center;
+  font-weight: normal;
+}
+
+td {
+  padding: 8px;
+  text-align: center;
+}
+
+/* Error message styling */
+li {
+  color: red;
+  margin-top: 10px;
+  list-style-type: none;
+}
+
+/* Student info styling */
+p:has(+ table) {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+/* Fix for the subject table structure */
+tbody {
+  display: table-row-group;
+}
+
+/* Subject header styling */
+table thead th {
+  background-color: #f2f2f2;
+  font-weight: normal;
+}
+
+/* Alternating row colors for better readability */
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* テスト一覧ページ専用のスタイル - 固有のクラス名を使用 */
+.test-list-container-unique {
+  font-family: "Hiragino Sans", "Meiryo", sans-serif;
+  max-width: 1000px;
+  margin-left: 20px;
+  padding: 20px;
+}
+
+.test-list-heading-unique {
+  background-color: #f2f2f2;
+  padding: 10px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border-left: 5px solid #ccc;
+}
+
+.test-list-form-unique {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.form-layout-unique {
+  display: flex;
+  align-items: flex-start;
+}
+
+.form-title-column-unique {
+  width: 100px;
+  margin-right: 20px;
+}
+
+.form-content-column-unique {
+  flex: 1;
+}
+
+.form-title-unique {
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.form-row-unique {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.student-form-wrapper-unique {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.form-column-unique {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-column-unique .test-list-label-unique {
+  margin-bottom: 5px;
+}
+
+.button-wrapper-unique {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+}
+
+.form-labels-unique {
+  margin-bottom: 5px;
+}
+
+.test-list-label-unique {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 13px;
+  min-width: 70px;
+}
+
+.test-list-select-unique {
+  padding: 5px;
+  margin-right: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 13px;
+  min-width: 150px;
+}
+
+.search-button-unique {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 6px 15px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.search-button-unique:hover {
+  background-color: #5a6268;
+}
+
+.error-message-unique {
+  color: red;
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+/* 学生別成績表示用のスタイル - 固有のクラス名を使用 */
+.student-result-container-unique {
+  margin-top: 20px;
+}
+
+.student-info-unique {
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.result-table-unique {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+.result-table-unique,
+.result-table-header-unique,
+.result-table-cell-unique {
+  border: 1px solid #ddd;
+}
+
+.result-table-header-unique {
+  background-color: #f2f2f2;
+  padding: 8px;
+  text-align: center;
+  font-weight: normal;
+}
+
+.result-table-cell-unique {
+  padding: 8px;
+  text-align: center;
+}
+
+.result-table-row-unique:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* 科目別成績表示用のスタイル - 固有のクラス名を使用 */
+.subject-result-container-unique {
+  margin-top: 20px;
+}
+
+.subject-table-unique {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+.subject-table-unique,
+.subject-table-header-unique,
+.subject-table-cell-unique {
+  border: 1px solid #ddd;
+}
+
+.subject-table-header-unique {
+  background-color: #f2f2f2;
+  padding: 8px;
+  text-align: center;
+  font-weight: normal;
+}
+
+.subject-table-cell-unique {
+  padding: 8px;
+  text-align: center;
+}
+
+.subject-table-row-unique:nth-child(even) {
+  background-color: #f9f9f9;
+}
