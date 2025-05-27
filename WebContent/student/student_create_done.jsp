@@ -7,7 +7,7 @@
 
 		<p class="completed">登録が完了しました</p>
 
-		<a href="/team_a/main/StudentCreateExecute.action">戻る</a> <a href="#">学生一覧</a>
+		<a href="/team_a/main/StudentCreateExecute.action">戻る</a> <a href="/team_a/main/StudentList.action">学生一覧</a>
 	</div>
 </div>
 
