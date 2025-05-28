@@ -3,12 +3,16 @@
 
 <div class="main-container">
 	<%@ include file="/includes/sidebar.jsp"%>
-	<c:if test="${not empty message}">
-	    <p>${message}</p>
-	</c:if>
 
-	<a href="/team_a/main/TestRegist.action">戻る</a>
-	<a href="/team_a/main/TestList.action">成績参照</a>
+	<div class="column-child">
+
+		<c:if test="${not empty message}">
+		    <p>${message}</p>
+		</c:if>
+
+		<a href="/team_a/main/TestRegist.action">戻る</a>
+		<a href="/team_a/main/TestList.action">成績参照</a>
+	</div>
 </div>
 
 <%@include file="../includes/footer.jsp" %>

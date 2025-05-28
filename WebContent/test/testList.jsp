@@ -12,33 +12,36 @@
 					<p class="form-title-unique">科目情報</p>
 				</div>
 				<div class="form-content-column-unique">
-					<div class="form-row-unique form-labels-unique">
-						<label for="f1" class="test-list-label-unique">入学年度</label>
-						<label for="f2" class="test-list-label-unique">クラス</label>
-						<label for="f3" class="test-list-label-unique">科目</label>
-					</div>
+					<div class="form-column-wrapper-unique">
+						<div class="form-field-column-unique">
+							<label for="f1" class="test-list-label-unique">入学年度</label>
+							<select name="f1" id="f1" class="test-list-select-unique">
+								<option value="">--------</option>
+								<c:forEach var="entYear" items="${entYearList}">
+									<option value="${entYear}">${entYear}</option>
+								</c:forEach>
+							</select>
+						</div>
 
-					<div class="form-row-unique">
-						<select name="f1" id="f1" class="test-list-select-unique">
-							<option value="">--------</option>
-							<c:forEach var="entYear" items="${entYearList}">
-							<option value="${entYear}">${entYear}</option>
-							</c:forEach>
-						</select>
+						<div class="form-field-column-unique">
+							<label for="f2" class="test-list-label-unique">クラス</label>
+							<select name="f2" id="f2" class="test-list-select-unique">
+								<option value="">--------</option>
+								<c:forEach var="classNum" items="${classList}">
+									<option value="${classNum}">${classNum}</option>
+								</c:forEach>
+							</select>
+						</div>
 
-						<select name="f2" id="f2" class="test-list-select-unique">
-							<option value="">--------</option>
-							<c:forEach var="classNum" items="${classList}">
-							<option value="${classNum}">${classNum}</option>
-							</c:forEach>
-						</select>
-
-						<select name="f3" id="f3" class="test-list-select-unique">
-							<option value="">--------</option>
-							<c:forEach var="subject" items="${subjectList}">
-							<option value="${subject.cd}">${subject.name}</option>
-							</c:forEach>
-						</select>
+						<div class="form-field-column-unique">
+							<label for="f3" class="test-list-label-unique">科目</label>
+							<select name="f3" id="f3" class="test-list-select-unique">
+								<option value="">--------</option>
+								<c:forEach var="subject" items="${subjectList}">
+									<option value="${subject.cd}">${subject.name}</option>
+								</c:forEach>
+							</select>
+						</div>
 
 						<button type="submit" class="search-button-unique">検索</button>
 					</div>

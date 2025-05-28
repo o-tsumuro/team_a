@@ -2,6 +2,7 @@
 
 /* 成績参照ページのユニーククラス */
 .test-list-container-unique {
+  flex: 1;  /* 追加：右端まで伸ばす */
   margin-left: 200px;
   padding: 30px;
   background-color: #fff;
@@ -76,6 +77,35 @@
   margin-bottom: 0;
 }
 
+.form-column-wrapper-unique {
+  display: flex;
+  gap: 15px;
+  align-items: flex-end; /* ボタンと高さを合わせるため */
+}
+
+.form-field-column-unique {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.test-list-label-unique {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.test-list-select-unique {
+  min-width: 120px;
+  max-width: 150px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 13px;
+  margin-bottom: 0;
+}
+
 .search-button-unique {
   background-color: #1976d2;
   color: white;
@@ -85,6 +115,7 @@
   font-size: 13px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-top: auto; /* ボタンを下に配置 */
 }
 
 .search-button-unique:hover {
