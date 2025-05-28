@@ -28,6 +28,7 @@
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 /* input要素を横長に */
 .column-child input {
@@ -35,10 +36,15 @@
 	height: 20px;
 	border-radius: 5px;
 =======
+=======
+>>>>>>> 289db80ba25caa86e3b35f6812f5f8bdbf774716
 .form-layout-unique {
   display: flex;
   gap: 20px;
   align-items: flex-start;
+<<<<<<< HEAD
+>>>>>>> 289db80ba25caa86e3b35f6812f5f8bdbf774716
+=======
 >>>>>>> 289db80ba25caa86e3b35f6812f5f8bdbf774716
 }
 
@@ -66,11 +72,16 @@
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .completed {
 	width: 100%;
 	background-color: #99FF99;
 	padding: 10px;
 	border-radius: 10px;
+=======
+.form-labels-unique {
+  margin-bottom: 10px;
+>>>>>>> 289db80ba25caa86e3b35f6812f5f8bdbf774716
 =======
 .form-labels-unique {
   margin-bottom: 10px;
