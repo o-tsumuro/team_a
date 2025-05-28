@@ -25,7 +25,8 @@ public class TestListAction extends Action {
 		Teacher teacher = (Teacher) session.getAttribute("teacher");
 		School school = (School) session.getAttribute("school");
 
-		int[] testEntYear = {2022, 2023, 2024, 2025};
+		StudentDAO studentDao = new StudentDAO();
+		List<Integer> testEntYear = studentDao.getEntYear();
 
 		//ユーザーが所属している学校のクラスデータを取得
 		ClassNumDAO classDao = new ClassNumDAO();
@@ -40,7 +41,6 @@ public class TestListAction extends Action {
 		session.setAttribute("entYearList", testEntYear);
 
 		//ユーザーが所属する学校の学生番号を全件取得
-		StudentDAO studentDao = new StudentDAO();
 		List<Student> studentList = studentDao.filter(teacher.getSchoolCd());
 		session.setAttribute("studentList", studentList);
 ;
