@@ -20,8 +20,11 @@
           <td class="subject-table-cell-unique">${t.classNum}</td>
           <td class="subject-table-cell-unique">${t.studentNo}</td>
           <td class="subject-table-cell-unique">${t.studentName}</td>
-          <td class="subject-table-cell-unique">${t.test1}</td>
-          <td class="subject-table-cell-unique">${t.test2}</td>
+
+          <c:forEach var="point" items="${t.points}">
+	          <td class="subject-table-cell-unique">${point.value}</td>
+		</c:forEach>
+
         </tr>
       </c:forEach>
     </tbody>
