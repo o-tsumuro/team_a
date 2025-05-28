@@ -32,6 +32,7 @@ public class SubjectDAO extends DAO {
 			sbj.setSchoolCd(rs.getString("school_cd"));
 		}
 
+		rs.close();
 		st.close();
 		con.close();
 
@@ -59,6 +60,7 @@ public class SubjectDAO extends DAO {
 
 		}
 
+		rs.close();
 		st.close();
 		con.close();
 
@@ -108,6 +110,7 @@ public class SubjectDAO extends DAO {
 			num = st.executeUpdate();
 		}
 
+		rs1.close();
 		st1.close();
 		st.close();
 		con.close();
