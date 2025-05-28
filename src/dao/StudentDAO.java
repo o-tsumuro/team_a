@@ -34,6 +34,7 @@ public class StudentDAO extends DAO {
 
 
         st.close();
+        con.close();
 
         return line > 0;
     }
